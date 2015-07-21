@@ -1,0 +1,3016 @@
+@charset "UTF-8";
+/* ============================================================================
+   @MASTER STYLESHEET
+   ========================================================================= */
+/* Your settings
+   ========================================================================= */
+/**
+ * Your project-specific settings.
+ *
+ * N.B. define first so they can be used throughout your styles.
+ */
+/* Scally framework
+   ========================================================================= */
+/**
+ * Contents:
+ *
+ * CORE
+ * LAYOUT
+ * OBJECTS
+ * COMPONENTS
+ * UTILITIES
+ */
+/**
+ * CORE.
+ *
+ * N.B. this is all mandatory for the Scally framework.
+ */
+/* ============================================================================
+   @CORE -> SETTINGS -> TYPOGRAPHY
+   ========================================================================= */
+/**
+ * Size.
+ */
+/**
+ * Line height.
+ */
+/**
+ * Line height ratio.
+ */
+/**
+ * Families.
+ */
+/* ============================================================================
+   @CORE -> SETTINGS -> SPACING
+   ========================================================================= */
+/**
+ * Base.
+ */
+/**
+ * Decrease from base.
+ */
+/**
+ * Increase from base.
+ */
+/* ============================================================================
+   @CORE -> SETTINGS -> RETINA RESOLUTION
+   ========================================================================= */
+/**
+ * A global setting for targeting hi-dpi (retina) devices which is used in the
+ * retina based mixins. The default value uses a device pixel ratio (dpr) of
+ * "1.3", "1.3" provides the best coverage of retina devices on the market
+ * today, see:
+ *
+ * - http://bjango.com/articles/min-device-pixel-ratio/
+ * - https://gist.github.com/marcedwards/3446599
+ *
+ * The setting will also accept a `dpi` unit e.g. `144dpi`.
+ */
+/* ============================================================================
+   @CORE -> SETTINGS -> BREAKPOINTS
+   ========================================================================= */
+/**
+ * Here we set breakpoints. Not every media query will be able to use one of
+ * these breakpoints and that's fine as there are no magic numbers with
+ * breakpoints i.e. if the UI needs to change then it needs to change. But
+ * most of the time we can use them.
+ *
+ * The breakdown of the breakpoints is based off this chart:
+ * http://static.lukew.com/unified_device_design.png
+ *
+ * Here's the thinking:
+ *
+ * - Palm: smart-phones and feature phones i.e. anything that can fit into the
+ *   palm of a hand.
+ * - Lap: typically tablets, notebooks and laptops i.e. anything that is
+ *   portable that doesn't include phones.
+ * - Lap small: smaller tablets/notebooks and e-readers e.g. Kindle.
+ * - Lap large: larger tablets and laptops.
+ * - Desk: desktop computers, TVs, etc. i.e. anything that is not portable.
+ * - Desk small: smaller desktop computer monitors.
+ * - Desk large: larger desktop computer monitors, TVs, and who knows what
+ *   else?
+ *
+ * The breakpoints:
+ *
+ * - Palm:         0 - 640px
+ *
+ * - Lap:          641px +
+ * - Lap large:    901px +
+ *
+ * - Desk:         1200px +
+ * - Desk large:   1366px +
+ *
+ * @credit
+ * http://www.lukew.com/ff/entry.asp?1679
+ * https://developers.google.com/webmasters/smartphone-sites/details?hl=en
+ */
+/**
+ * A global setting to define the common breakpoint(s) for Scally and your
+ * project. This is mainly used by the `generate-at-breakpoints()` mixin.
+ */
+/* ============================================================================
+   @CORE -> SETTINGS -> WIDTHS
+   ========================================================================= */
+/**
+ * Percentage based widths.
+ */
+/**
+ * Whole.
+ */
+/**
+ * Half.
+ */
+/**
+ * Thirds.
+ */
+/**
+ * Quarters.
+ */
+/**
+ * Fifths.
+ */
+/**
+ * Sixths.
+ */
+/**
+ * Sevenths.
+ */
+/**
+ * Eigths.
+ */
+/**
+ * Tenths.
+ */
+/**
+ * Twelfhs.
+ */
+/* ============================================================================
+   @CORE -> SETTINGS -> COLOURS
+   ========================================================================= */
+/**
+ * Brand.
+ */
+/**
+ * Black.
+ */
+/**
+ * White.
+ */
+/**
+ * Text.
+ */
+/**
+ * Primary / Secondary.
+ */
+/**
+ * States.
+ */
+/**
+ * Text input placeholder colour.
+ */
+/* ============================================================================
+   @CORE -> SETTINGS -> POSITIONING
+   ========================================================================= */
+/**
+ * `z-index` values.
+ *
+ * A nice way to maintain `z-index` order. Be sure to read this:
+ * http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+ *
+ * Scally kicks it off by providing a stacking order context at the lowest
+ * level i.e. for the containers that make up the main sections of a web site
+ * which is usually something like this:
+ *
+   <body>
+     <header>
+     <main>
+     <footer>
+   </body>
+ *
+ * So we can set up the above like so:
+ *
+ * $z-index-elements-global:  footer,           // `z-index: 1`
+                              main,             // `z-index: 2`
+                              header !default;  // `z-index: 3`
+ *
+ * Then within each of these main sections e.g. `header` you may end up with
+ * more stacking contexts e.g.
+ *
+   $z-index-elements-header:  navigation, // `z-index: 1`
+                              drop-downs; // `z-index: 2`
+ *
+ * So the stacking order of the above would be:
+ *
+ * header (3)
+ *  navigation (1)
+ *  drop-downs (2)
+ * main (2)
+ * footer (1)
+ *
+ * @credit
+ * http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+ */
+/**
+ * Off-screen distance.
+ */
+/* ============================================================================
+   @CORE -> SETTINGS -> COSMETICS
+   ========================================================================= */
+/**
+ * Border radius.
+ */
+/* ============================================================================
+   @CORE -> FUNCTIONS -> CONVERT PX TO EM/REM
+   ========================================================================= */
+/**
+ * To convert `px` to `em`s or `rem`s.
+ *
+ * N.B. this function is used mainly to feed the mixins.
+ *
+ * @example
+   .foo {
+     margin-left: to-em(8, 20);
+   }
+
+   .foo {
+     padding: to-rem(8) 0;
+   }
+ *
+ */
+/**
+ * `em`.
+ */
+/**
+ * `rem`.
+ */
+/* ============================================================================
+   @CORE -> FUNCTIONS -> MATH HELPERS
+   ========================================================================= */
+/**
+ * A few maths helpers mainly used for halving and doubling numbers, returning
+ * rounded integers.
+ *
+ * @example
+   .foo {
+     padding: halve(3.2px);
+   }
+ */
+/**
+ * Quarter.
+ */
+/**
+ * Third.
+ */
+/**
+ * Halve.
+ */
+/**
+ * Double.
+ */
+/**
+ * Triple.
+ */
+/**
+ * Quadruple.
+ */
+/* ============================================================================
+   @CORE -> FUNCTIONS -> STRING REPLACE
+   ========================================================================= */
+/**
+ * A string helper which replaces a set of characters in a string.
+ *
+ * @credit
+ * http://sassmeister.com/gist/1b4f2da5527830088e4d
+ *
+ * @example
+   str-replace("my-long-string", "long", "longer");
+ */
+/* ============================================================================
+   @CORE -> FUNCTIONS -> STRIP UNIT
+   ========================================================================= */
+/**
+ * To strip units from a number.
+ *
+ * N.B. This function is used internally by the functions and mixins.
+ *
+ * @credit
+ * https://css-tricks.com/snippets/sass/strip-unit-function/
+ *
+ * @example
+   strip-unit(14px);
+ *
+ */
+/* ============================================================================
+   @CORE -> FUNCTIONS -> TINT & SHADE
+   ========================================================================= */
+/**
+ * Two simple functions that slightly lighten or darken a colour by using the
+ * mix function.
+ *
+ * @credit
+ * http://sass-guidelin.es/#lightening-and-darkening-colors
+ *
+ * @example
+   .foo {
+     color: tint(red, 10%);
+   }
+
+   .foo {
+     background-color: shade(#f2f2f2, 10%);
+   }
+ */
+/**
+ * Tint: slightly lighten a colour.
+ */
+/**
+ * Shade: slightly darken a colour.
+ */
+/* ============================================================================
+   @CORE -> MIXINS -> CONVERT PX TO EM/REM
+   ========================================================================= */
+/**
+ * Convert `px` to `em`s or `rem`s for multiple properties or values or
+ * both. Accepts a list of lists (instead a list of values) for properties
+ * that accept multiple lists of values. Only numbers are converted;
+ * everything else is passed through. For the `to-em` `@mixin` `$context` is
+ * an optional argument that allows making measurements relative to the parent
+ * font size rather than the current.
+ *
+ * N.B. a `px` unit is not necessary but will work if specified e.g. "20" is
+ * fine, so is "20px" e.g.
+ *
+   .foo {
+     @include to-em(height, 125);
+   }
+
+   .foo {
+     @include to-em(height, 125px);
+   }
+ *
+ * @example
+   .foo {
+     @include to-em(width height, 125);
+   }
+
+   .foo {
+     @include to-rem(padding, 0 25);
+   }
+
+   .foo {
+     @include to-em(text-shadow, (#0d6e28 1 1) (#777 0 0 2), 16);
+   }
+
+   .foo {
+     @include to-rem(box-shadow, (inset 0 0 0 1 #2a9022) (inset 0 0 3 #459966));
+   }
+
+   .foo {
+     @include to-em(padding margin, $spacing-base, false, true);
+   }
+
+   .foo {
+     @include to-rem(padding margin, $spacing-base, true);
+   }
+ */
+/**
+ * A generic mixin that is used by the `to-em()` and `to-rem()` mixins below.
+ */
+/**
+ * `em`.
+ */
+/**
+ * `rem`.
+ */
+/* ============================================================================
+   @CORE -> MIXINS -> FONT SIZE
+   ========================================================================= */
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in
+ * a single value, e.g.
+ *
+   .foo {
+     @include font-size(12);
+   }
+ *
+ * This will generate a `rem`-based font-size, as well as a unitless
+ * line-height which will place the element on your baseline, e.g.
+ *
+   .foo {
+     font-size: 0.75rem;
+     line-height: 2;
+   }
+ *
+ * If you do not want Scally to generate a line-height for you then simply pass
+ * in your own as a second parameter e.g.
+ *
+   .foo {
+     @include font-size(12, 1.5);
+   }
+ *
+ * This will yield:
+ *
+   .foo {
+     font-size: 0.75rem;
+     line-height: 1.5;
+   }
+ *
+ * This parameter can be any integer including an integer with `px` appended,
+ * `inherit`, or `normal` e.g.
+ *
+   .foo {
+     @include font-size(12, 18px);
+   }
+
+   .foo {
+     @include font-size(12, inherit);
+   }
+
+   .foo {
+     @include font-size(12, normal);
+   }
+ *
+ * Any line-heights with `px` appended will still output as a unitless
+ * line-height e.g.
+ *
+   .foo {
+     @include font-size(12, 18px);
+   }
+ *
+ * This will yield:
+ *
+   .foo {
+     font-size: 0.75rem;
+     line-height: 1.5;
+   }
+ *
+ * If you don't want a line-height at all, pass in a second parameter of
+ * `none` or `false`:
+ *
+   .foo {
+     @include font-size(12, none);
+   }
+ *
+ * This will yield:
+ *
+   .foo {
+     font-size: 0.75rem;
+   }
+ *
+ * @example
+   .foo {
+     @include font-size(18);
+   }
+
+   .foo {
+     @include font-size(12, 1.5);
+   }
+
+   .foo {
+     @include font-size(12, 18px);
+   }
+
+   .foo {
+     @include font-size(12, none);
+   }
+
+   .foo {
+     @include font-size(24, inherit);
+   }
+
+   .foo {
+     @include font-size(24, normal);
+   }
+
+   .foo {
+     @include font-size(24, false, true);
+   }
+   or
+   .foo {
+     @include font-size(24, 1.2, !important);
+   }
+ *
+ * @credit
+ * https://github.com/inuitcss/tools.mixins/blob/master/_tools.mixins.scss
+ */
+/* ============================================================================
+   @CORE -> MIXINS -> GRADIENTS
+   ========================================================================= */
+/**
+ * Some simple gradients.
+ */
+/**
+ * Linear gradient accepting two colours, directional keywords (default
+ * direction is `bottom`), and an optional IE 9 fallback.
+ *
+ * @example
+   .foo {
+     @include linear-gradient(blue, red);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, left);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, top left);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, top right);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, bottom left);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, bottom right);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, top, true);
+   }
+ */
+/**
+ * Radial gradient accepting two colours.
+ *
+ * @example
+   @include radial-gradient(blue, red);
+ */
+/* ============================================================================
+   @CORE -> MIXINS -> MEDIA QUERIES
+   ========================================================================= */
+/**
+ * Setup media query mixins for the following Media features
+ * (http://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/#media1):
+ *
+ * - Width
+ * - Height
+ * - Resolution
+ *
+ * The width and height mixins are for applying styles based on the width or
+ * height of the viewport, this can either be a minimum width or height or a
+ * maximum width or height, or a minimum width or height range or a maximum
+ * width or height range. The defaults are "width" and "minimum". They accept
+ * any integer or any of Scally's breakpoints defined here: Core -> Settings
+ * -> Breakpoints. E.g.
+ *
+   @include respond-to(400) {
+     .foo {background: red;}
+   }
+ *
+ * Would compile to:
+ *
+   @media min-width(25em) {
+    .foo {background: red;}
+   }
+ *
+ * And for a range:
+ *
+   @include respond-range(500, 780) {
+    .foo {background: red;}
+   }
+ *
+ * Would compile to:
+ *
+   @media (min-width: 31.25em) and (max-width: 48.75em) {
+    .foo {background: red;}
+   }
+ *
+ * To apply a maximum width or height the "max" flag needs to be applied e.g.
+ *
+   @include respond-to(desk-large, max) {
+     .foo {background: red;}
+   }
+ *
+ * And for a range:
+ *
+   @include respond-range(500, 700, max) {
+     .foo {background: red;}
+   }
+ *
+ * And to target the height the `$axis` parameter needs to be set to "height"
+ * e.g.
+ *
+   @include respond-to(780, $axis: height) {
+     .foo {background: red;}
+   }
+ *
+ * And for a range:
+ *
+   @include respond-range(500, 700, $axis: height) {
+     .foo {background: red;}
+   }
+ *
+ * Applying both maximum and height will look something like this:
+ *
+   @include respond-to(palm, max, $axis: height) {
+     .foo {background: red;}
+   }
+ *
+ * For a range it doesn't make sense to pass in the "max" flag as ranges will
+ * always use a maximum width or height for the second parameter as ranges
+ * always need to be minimum-maximum however if the second parameter is
+ * omitted and the first parameter is a Scally breakpoint then the second
+ * parameter will use the next breakpoint in the sequence. So if you pass in
+ * the "lap" breakpoint for the first parameter and nothing else for the
+ * second parameter it will be "lap-large" as "lap-large" comes after "lap".
+ * E.g.
+ *
+   @include respond-range(lap, $axis: height) {
+     .foo {background: red;}
+   }
+ *
+ * Would compile to:
+ *
+   @media (min-height: 40.0625em) and (max-height: 75em) {
+     .foo {background: red;}
+   }
+ *
+ * Where `max-height: 75em` is the "lap-large" breakpoint.
+ *
+ * N.B. the width and height mixins accept unitless integers or integers with
+ * `px` e.g.
+ *
+   @include respond-to(400) {
+     .foo {background: red;}
+   }
+
+   @include respond-to(400px) {
+     .foo {background: red;}
+   }
+ *
+ * The resolution mixin is for applying styles to hi-dpi (retina) devices. It
+ * uses a default resolution defined here: Core -> Settings -> Retina
+ * Resolution or it will accept either a unitless device pixel ratio (dpr) e.g.
+ *
+   @include respond-retina(2) {
+     .foo {background-size: 100px auto;}
+   }
+ *
+ * Which will compile to a dpi unit using the calculation: "dpr * 96dpi"
+ * meaning the above mixin will compile too:
+ *
+   @media (min-resolution: 192dpi) {
+     .foo {background-size: 100px auto;}
+   }
+ *
+ * Or it will accept a dpi unit e.g.
+ *
+   @media (min-resolution: 192dpi) {
+     .foo {background-size: 100px auto;}
+   }
+ */
+/**
+ * Simple minimum and maximum width and height values.
+ */
+/**
+ * Ranges.
+ */
+/**
+ * Retina.
+ */
+/* ============================================================================
+   @CORE -> MIXINS -> GENERATE AT BREAKPOINTS
+   ========================================================================= */
+/**
+ * This mixin will take a class selector e.g. `.u-align-v-inline-top` and make
+ * it available at any breakpoint you wish. Out of the box Scally applies this
+ * to all utilities, all objects, and some of the layout modules (the
+ * layout modules it isn't applied too apply this behavior custom to that
+ * module), however it is turned off by default in favour of leaner stylesheets
+ * and not all UI's are responsive. Turning it on requires setting the relevant
+ * setting to 'true' e.g. for the Alignments utility if I wanted the "inline
+ * vertical align top" utility: `.u-align-v-inline-top` to use this mixin I
+ * change this setting:
+ *
+   $u-align-apply-breakpoints-for-v-inline-top: false !default;
+ *
+ * To `true` in my master stylesheet above the relevant `@import` like so:
+ *
+   $u-align-apply-breakpoints-for-v-inline-top: true;
+   @import "scally/utilities/u-alignments";
+ *
+ * Everything in Scally that uses this mixin features a setting to apply the
+ * breakpoint(s) for the mixin. So again if we look at the Alignments utility
+ * you'll see this setting:
+ *
+   $u-align-apply-at-breakpoints: $default-breakpoints !default;
+ *
+ * Where `$default-breakpoints` equals the 'Lap' breakpoint defined in
+ * Core -> Settings -> Breakpoints. All of these settings have the same
+ * `$default-breakpoints` value so if this feature is turned on everything that
+ * uses this mixin in Scally is available at the 'Lap' breakpoint. You can
+ * override this setting and apply any of the Scally breakpoints or any
+ * custom breakpoint you wish i.e. it will accept any integer. So if we wanted
+ * this utility: `.u-align-v-inline-top` to be applied at the following Scally
+ * breakpoints: 'Lap', 'Lap-large', 'Desk', and 'Desk-large' we would update
+ * the `$u-align-apply-at-breakpoints` setting in our master stylesheet like
+ * so:
+ *
+   // Set the breakpoints
+   $u-align-apply-at-breakpoints: (lap, lap-large, desk, desk-large);
+   // Turn the feature on
+   $u-align-apply-breakpoints-for-v-inline-top: true;
+   // Import the utility
+   @import "scally/utilities/u-alignments";
+ *
+ * If you wanted it available at ALL of Scally's breakpoints then you can pass
+ * in the keyword "all" like so:
+ *
+   $u-align-apply-at-breakpoints: (all);
+ *
+ * If you wanted this utility applied at a custom breakpoint of "999px" it's as
+ * easy as:
+ *
+   $u-align-apply-at-breakpoints: 999;
+ *
+ * Or more than one custom breakpoint e.g. "999px" and "1366px":
+ *
+   $u-align-apply-at-breakpoints: (999, 1366);
+ *
+ * Or a mix of custom breakpoints and Scally breakpoints:
+ *
+   $u-align-apply-at-breakpoints: (lap, desk, 1366);
+ *
+ * The default for the media query generated by this mixin is `min-width` e.g.
+ *
+   @media (min-width: 40.0625em) {
+     .u-align-v-inline-top-from-lap {
+       vertical-align: top !important;
+     }
+   }
+ *
+ * For `max-width` media queries you need to apply the 'max' flag when defining
+ * your breakpoints e.g.
+ *
+   $u-align-apply-at-breakpoints: (lap max, desk max, 1366 max);
+ *
+ * The format of the generated class using the default `min-width` media query
+ * is:
+ *
+   .[class-selector]-from-[breakpoint]
+ *
+ * E.g.
+ *
+   .u-align-v-inline-top-from-lap
+   .u-align-v-inline-top-from-desk
+   .u-align-v-inline-top-from-desk-large
+   .u-align-v-inline-top-from-999
+ *
+ * The format of the generated class using a `max-width` media query is:
+ *
+   .[class-selector]-up-to-[breakpoint]
+ *
+ * E.g.
+ *
+   .u-align-v-inline-top-up-to-lap
+   .u-align-v-inline-top-up-to-desk
+   .u-align-v-inline-top-up-to-desk-large
+   .u-align-v-inline-top-up-to-999
+ *
+ * Sometimes the selector that is passed into the mixin is more complex than a
+ * single class. To account for this apply the "{bp}" flag to the part of the
+ * selector that needs it e.g.
+ *
+   .o-list-block--large{bp} > li
+   .o-list-inline--divider{bp} > li + li
+
+   @include generate-at-breakpoints('.o-list-block--large{bp} > li',
+    $o-list-block-apply-at-breakpoints)
+
+   @include generate-at-breakpoints('.o-list-inline--divider{bp} > li + li',
+    $o-list-inline-apply-at-breakpoints)
+ */
+/**
+ * Settings.
+ */
+/* ============================================================================
+   @CORE -> MIXINS -> GENERATE PERCENTAGE CLASSES AT BREAKPOINTS
+   ========================================================================= */
+/**
+ * Generate percentage classes defined by the settings here: Core -> Settings
+ * -> Widths.
+ *
+ * The default format for these classes is:
+ *
+    .u-one-whole
+    .u-one-half
+    .u-one-third
+    .u-one-quarter
+ *
+ * ... and so on.
+ *
+ * Or in the more terse format:
+ *
+    .u-100pc
+    .u-50pc
+    .u-33pc
+    .u-25pc
+ *
+ * ... and so on.
+ *
+ * The more terse format is turned off by default, to turn it on change this
+ * setting: `$mixin-apply-terse-percentage-class-names` to 'true' above the
+ * `@import` for this mixin in your master stylesheet e.g.
+ *
+   $mixin-apply-terse-percentage-class-names: true;
+   @import "scally/core/mixins/generate-percentage-classes-at-breakpoints";
+ *
+ * The percentage classes can be applied at any breakpoint or any of the set
+ * breakpoints defined here: Core -> Settings -> Breakpoints. If the breakpoint
+ * is set via a `min-width` media query (the default)—say the 'desk'
+ * breakpoint—then the format will be: `.u-one-half-from-desk`, but if the
+ * breakpoint is set via a `max-width` media query then the format will be:
+ * `.u-one-half-up-to-desk`. For more info on how applying the breakpoints
+ * work see the `generate-at-breakpoints()` mixin.
+ *
+ * @example
+   @include generate-percentage-classes-at-breakpoints(
+     $l-grid-push-apply-at-breakpoints,
+     $scally-type: "l",
+     $class-name: "push",
+     $css-property: "left"
+   );
+ */
+/**
+ * Settings.
+ */
+/* ============================================================================
+   @CORE -> MIXINS -> RETINA BACKGROUND IMAGE
+   ========================================================================= */
+/**
+ * Creates a hi-dpi (retina) background image by passing in the image url, the
+ * image width and height—or the `auto` keyword`, and the resolution you want
+ * to target. By default the resolution comes from: Core -> Settings -> Retina
+ * Resolution but if you want to override this then you can pass in either a
+ * unitless device pixel ratio (dpr) or a `dpi` value.
+ *
+ * @example
+   .foo {
+      background: url("logo.png") no-repeat;
+      @include retina-bg-image("logo@2x.png", 100px, 25px, 1.5);
+    }
+
+    .foo {
+      background: url("logo.png") no-repeat;
+      @include retina-bg-image("logo@2x.png", 100px, auto, 144dpi);
+    }
+  *
+  * @credit
+  * http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+ */
+/* ============================================================================
+   @CORE -> MIXINS -> TARGET BROWSERS
+   ========================================================================= */
+/**
+ * Target specific browsers.
+ *
+ * N.B. these mixins should be avoided as it's not good to target styles for
+ * different browsers. And the Mozilla mixin cannot be nested in a style
+ * declaration like the others, it has to exist by itself.
+ *
+ * @example
+   @include target-webkit {
+     .foo {background: blue;}
+   }
+
+   @include target-mozilla {
+     .foo {background: red;}
+   }
+
+   @include target-IE10-and-up {
+     .foo {background: orange;}
+   }
+ */
+/**
+ * Webkit.
+ */
+/**
+ * Mozilla.
+ */
+/**
+ * IE 10 and up.
+ */
+/* ============================================================================
+   @CORE -> MIXINS -> TARGET HEADINGS
+   ========================================================================= */
+/**
+ * Style any number of headings in one fell swoop, supports double stranded
+ * headings.
+ *
+ * @example
+   .foo {
+     @include headings(1, 3) {
+       color: red;
+     }
+   }
+ *
+ * @credit
+ * https://github.com/csswizardry/inuit.css/blob/master/generic/_mixins.scss
+ */
+/* ============================================================================
+   @CORE -> MIXINS -> TEXT INPUT PLACEHOLDER COLOUR
+   ========================================================================= */
+/**
+ * A mixin that allows you to override the default browser colour for the text
+ * input `placeholder` attribute. A default colour is set in Core -> Settings
+ * -> Colours.
+ *
+ * N.B. by default Firefox sets its placeholder attribute to have an opacity
+ * of '0.4' so we override that to be '1'.
+ *
+ * @example
+   .foo {
+     @include text-input-placeholder-color();
+   }
+
+   .foo {
+     @include text-input-placeholder-color(#666);
+   }
+ */
+/*! normalize.css v3.0.3 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* ============================================================================
+   @CORE -> RESET
+   ========================================================================= */
+/**
+ * In addition to normalize.css we also apply a reset which mainly removes all
+ * margins, paddings, and borders, from all elements, and applies the nice
+ * `border-box` value for `box-sizing` amongst a few other things.
+ */
+/**
+ * Settings.
+ */
+/**
+ * Remove all margins, paddings, and borders.
+ *
+ * N.B. the complete list of HTML5 elements
+ * https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list
+ */
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+b,
+blockquote,
+body,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+dialog,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+main,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+u,
+ul,
+var {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/**
+ * Reset the `box-sizing` property to the more friendly `border-box` value.
+ *
+ * @credit
+ * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/**
+ * Reset lists.
+ */
+ul,
+ol {
+  list-style-type: none;
+}
+
+/**
+ * Suppress the focus outline on links that cannot be accessed via a keyboard.
+ * This prevents an unwanted focus outline from appearing around elements that
+ * might still respond to pointer events.
+ *
+ * N.B. it is okay to use `!important` here as we're doing it preemptively
+ * i.e. you know you will always want the rule it's applied too to take
+ * precedence.
+ *
+ * @credit
+ * https://github.com/suitcss/
+ */
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+/**
+ * Remove underlines from potentially troublesome elements.
+ */
+u,
+ins {
+  text-decoration: none;
+}
+
+/**
+ * Apply faux underlines to inserted text via `border-bottom`.
+ */
+ins {
+  border-bottom: 1px solid;
+}
+
+/* ============================================================================
+   @CORE -> BASE -> ROOT
+   ========================================================================= */
+/**
+ * The root element: `html`.
+ */
+/**
+ * Settings.
+ */
+/**
+ * 1. Set the default `font-size`, `line-height` and `font-family` for the
+ *    entire project, sourced from the Scally settings. The `font-size` is
+ *    calculated to exist in `em`s, the `line-height` is calculated to exist
+ *    unitlessly.
+ * 2. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ */
+html {
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+/* ============================================================================
+   @CORE -> BASE -> ABBREVIATION
+   ========================================================================= */
+abbr[title] {
+  cursor: help;
+}
+
+/* ============================================================================
+   @CORE -> BASE -> FORMS
+   ========================================================================= */
+/**
+ * Settings.
+ */
+/**
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Text inputs and `select`s styles.
+ */
+/**
+ * The name of the class to target iOS so the top inner shadow from iOS inputs
+ * can be removed.
+ */
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set
+ * globally. If it has been previously been defined, the following variable
+ * will be overridden and will be set to `true`.
+ */
+/**
+ * Indicate that `label` will shift focus to the associated `input` element.
+ */
+label,
+.faux-label {
+  cursor: pointer;
+}
+
+/**
+ * Disable `textarea`s from being resized horizontally.
+ */
+textarea {
+  resize: vertical;
+}
+
+/**
+ * Override `content-box` from normalize.css for search inputs.
+ */
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+/**
+ * Remove rounded corners from iOS search inputs by overriding
+ * `appearance: textfield` from normalize.css.
+ * See: https://github.com/necolas/normalize.css/issues/360.
+ */
+input[type="search"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/**
+ * Remove rounded corners that iOS applies to all `input` buttons, see:
+ * https://github.com/necolas/normalize.css/issues/178. And certain browsers
+ * e.g. Chrome, apply rounded corners to `select` lists so if we haven't opted
+ * in for rounded corners via the `$apply-text-input-and-select-styles` and
+ * `$apply-text-input-and-select-rounded-corners` settings then turn them off.
+ */
+input[type="submit"],
+input[type="button"],
+input[type="image"],
+input[type="reset"],
+select {
+  border-radius: 0;
+}
+
+/**
+ * Fix for IE and old versions of some other browsers not wrapping text within
+ * a `legend`.
+ *
+ * 1. Enable line-wrapping in IE8+.
+ * 2. Enable line-wrapping in old versions of some other browsers.
+ *
+ * @credit
+ * http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
+ */
+legend {
+  display: table;
+  white-space: normal;
+}
+
+/**
+ * Set whitespace for `legend`s via a class, we use `padding` over `margin` as
+ * `padding` is the most cross-browser compatible for `legend`s.
+ */
+.form-heading {
+  padding-bottom: 1.5rem;
+}
+
+/**
+ * Disabled state.
+ *
+ * N.B. it is okay to use `!important` here as we're doing it preemptively
+ * i.e. you know you will always want the rule it's applied too to take
+ * precedence.
+ */
+button[disabled],
+input[disabled],
+select[disabled],
+textarea[disabled],
+.is-disabled {
+  cursor: not-allowed !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  opacity: 0.6 !important;
+}
+
+.is-disabled--no-hover {
+  cursor: inherit !important;
+  color: inherit !important;
+  background: inherit !important;
+  text-decoration: none !important;
+}
+
+/**
+ * Required field indicator (asterisk).
+ */
+.required-field {
+  color: #dc322f;
+  cursor: help;
+}
+
+/**
+ * Text inputs via the `.text-input` class, `textarea`s, and `select` lists.
+ */
+.text-input,
+textarea,
+select {
+  padding: 0.375rem;
+  color: #000;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  width: 100%;
+}
+
+/**
+ * Text input placeholder colour which uses the
+ * `text-input-placeholder-color()` mixin.
+ */
+::-webkit-input-placeholder {
+  color: #999;
+}
+
+::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #999;
+}
+
+:input-placeholder {
+  color: #999;
+}
+
+::input-placeholder {
+  color: #999;
+}
+
+/**
+ * Remove the top inner shadow from iOS inputs.
+ *
+ * N.B. this needs to be isolated to iOS devices so user-agent sniffing needs
+ * to happen and the most robust implementation of this is to apply the hook
+ * to the `html` element e.g. `.ios`.
+ */
+/**
+ * Hide the close button generated by IE 10+ for inputs.
+ */
+/* ============================================================================
+   @CORE -> BASE -> DETAILS
+   ========================================================================= */
+/**
+ * Settings.
+ */
+summary {
+  cursor: pointer;
+  /**
+   * Control the visibility of the `detail`s marker.
+   */
+}
+
+/* ============================================================================
+   @CORE -> BASE -> HEADINGS
+   ========================================================================= */
+/**
+ * Double stranded for greater reuse.
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply font family.
+ */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: Arial, sans-serif;
+}
+
+/**
+ * Set margins but make optional.
+ */
+/**
+ * H1.
+ */
+h1,
+.h1 {
+  font-size: 2.25rem ;
+  line-height: 1.33333 ;
+  margin-top: 0;
+}
+
+/**
+ * H2.
+ */
+h2,
+.h2 {
+  font-size: 1.875rem ;
+  line-height: 1.6 ;
+}
+
+/**
+ * H3.
+ */
+h3,
+.h3 {
+  font-size: 1.5rem ;
+  line-height: 1 ;
+}
+
+/**
+ * H4.
+ */
+h4,
+.h4 {
+  font-size: 1.25rem ;
+  line-height: 1.2 ;
+}
+
+/**
+ * H5.
+ */
+h5,
+.h5 {
+  font-size: 1rem ;
+  line-height: 1.5 ;
+}
+
+/**
+ * H6.
+ */
+h6,
+.h6 {
+  font-size: 0.875rem ;
+  line-height: 1.71429 ;
+}
+
+/* ============================================================================
+   @CORE -> BASE -> HORIZONTAL RULE
+   ========================================================================= */
+/**
+ * Settings.
+ */
+hr {
+  display: block;
+  border: 0;
+  border-top: 1px solid #000;
+  padding: 0;
+}
+
+/* ============================================================================
+   @CORE -> BASE -> LINKS
+   ========================================================================= */
+/**
+ * Base link styles. At the bare minimum a colour is applied for both default
+ * and hover states. There is the option to remove the underline for the
+ * default state and apply it on the hover state instead, and an option to
+ * apply a bottom border as the underline instead of the browser default
+ * `text-decoration: underline`. You can also choose to apply a transition to
+ *  link colour and its underline—if the bottom border option is selected—when
+ *  hovering the link.
+ *
+ * N.B. a mixin is used to contain the base link styles so that it can be
+ * easily shared with other parts of Scally e.g.
+ *
+ * - Link complex object
+ * - Button faux component
+ */
+/**
+ * Settings.
+ */
+a {
+  color: #2aa198;
+  text-decoration: underline;
+  text-decoration: none;
+  -webkit-transition: all 0.15s ease;
+          transition: all 0.15s ease;
+}
+a:hover, a:focus {
+  color: #1f7972;
+  text-decoration: underline;
+}
+
+/* ============================================================================
+   @CORE -> BASE -> MEDIA
+   ========================================================================= */
+/**
+ * Settings.
+ */
+/**
+ * Remove the gap between media elements and the bottom of their containers.
+ *
+ * @credit
+ * http://html5boilerplate.com/
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Images.
+ *
+ * 1. Make responsive.
+ * 2. So that `alt` text is visually offset if images don't load.
+ */
+img {
+  max-width: 100%;
+  height: auto;
+  /**
+   * Google Maps breaks if `max-width: 100%` acts upon it; use their
+   * selector to turn this off.
+   */
+  font-style: italic;
+}
+.gm-style img {
+  max-width: none;
+}
+
+/**
+ * If responsive images are turned off but you still need to apply it in
+ * certain cases.
+ */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+ * If responsive images are turned on but you need to turn it off in certain
+ * cases.
+ */
+.img-not-responsive {
+  max-width: none;
+}
+
+/**
+ * Set the default behavior for touch-based browsing in IE 10 on devices
+ * running Windows 8.
+ */
+canvas {
+  -ms-touch-action: double-tap-zoom;
+}
+
+/* ============================================================================
+   @CORE -> BASE -> PARAGRAPHS
+   ========================================================================= */
+/**
+ * Settings.
+ */
+/* ============================================================================
+   @CORE -> BASE -> PRINT
+   ========================================================================= */
+/**
+ * All print styles outside of Core -> Base live in context with their
+ * corresponding rule sets.
+ *
+ * N.B. it is okay to use `!important` here as we're doing it preemptively i.e.
+ * you know you will always want the rule it's applied too to take precedence.
+ *
+ * @credit
+ * http://html5boilerplate.com/
+*/
+@media print {
+  /**
+   * Apply print friendly styles to ALL elements.
+   */
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /**
+   * Hide elements not really useful on a piece of paper.
+   */
+  nav,
+  video,
+  audio {
+    display: none !important;
+  }
+
+  /**
+   * Ensure ALL images are responsive.
+   */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /**
+   * Make links always stand out.
+   */
+  a, a:visited {
+    text-decoration: underline !important;
+    border-bottom: 0 !important;
+  }
+
+  /**
+   * Show the `href` and `title` attribute values of links and abbreviations
+   * in a pseudo element.
+   */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  /**
+   * h5bp.com/t.
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  /**
+   * Set page breaks, orphans and widows.
+   */
+  h2
+  h3 {
+    page-break-after: avoid;
+  }
+
+  tr,
+  img,
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+}
+/* ============================================================================
+   @CORE -> BASE -> VIEWPORT
+   ========================================================================= */
+/**
+ * Add optional `@viewport` rule to future proof.
+ *
+ * N.B. leave out `-ms-` prefix, see here:
+ * http://nostrongbeliefs.com/why-i-think-we-shouldnt-use-css-viewport-in-ie10-for-now/
+ */
+/**
+ * Settings.
+ */
+@-webkit-viewport {
+  width: device-width;
+}
+@-moz-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@-ms-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+/* ============================================================================
+   @CORE -> PLACEHOLDERS -> BOTTOM SPACING
+   ========================================================================= */
+/**
+ * Applies bottom spacing in order to try to keep a consistent vertical rhythm.
+ */
+/**
+ * Base.
+ */
+h1, .h1, h2, .h2, h3, .h3, hr, p {
+  margin-bottom: 1.5rem;
+}
+
+/**
+ * Half.
+ */
+h4, .h4, h5, .h5, h6, .h6 {
+  margin-bottom: 0.75rem;
+}
+
+/**
+ * Remove from the last children.
+ */
+h1:last-child, .h1:last-child, h2:last-child, .h2:last-child, h3:last-child, .h3:last-child, hr:last-child, p:last-child,
+h4:last-child,
+.h4:last-child,
+h5:last-child,
+.h5:last-child,
+h6:last-child,
+.h6:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * LAYOUT.
+ */
+/* ============================================================================
+   @LAYOUT -> CONTAINER
+   ========================================================================= */
+/**
+ * The main container that wraps all major layout pieces so that we keep all
+ * layout consistent. The container is responsive in that it will be a fluid
+ * width using '%' up until it hits it's maximum width. And it's center
+ * aligned by default.
+ *
+ * @markup
+   <div class="l-container [modifier(s)]"> [...] </div>
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+/**
+ * Widths.
+ */
+.l-container {
+  width: 92%;
+  min-width: 13.75rem;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+@media print {
+  .l-container {
+    width: auto;
+  }
+}
+
+/**
+ * Modifier: full bleed.
+ */
+.l-container--full-bleed {
+  width: auto;
+  max-width: none;
+}
+
+/**
+ * Modifier: not centered.
+ */
+.l-container--not-centered {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ============================================================================
+   @LAYOUT -> GRID
+   ========================================================================= */
+/**
+ * A powerful fluid and nestable mobile first grid system.
+ *
+ * Combine with the viewport specific width classes found in Utilities ->
+ * Widths which all feed from the width settings set here: Core -> Settings ->
+ * Widths to apply grid widths at specific viewports, for example:
+ *
+   <div class="l-grid__item  u-one-half-from-lap u-one-third-from-desk">
+ *
+ * This would give you a grid item which is 100% width unless it is on a lap
+ * device, at which point it becomes 50% wide, or it is on a desktop device,
+ * at which point it becomes 33.333% width. See breakpoints set here: Core ->
+ * Settings -> Breakpoints.
+ *
+ * N.B. grid systems should be thought of as shelves. They contain content but
+ * are not content in themselves. You put up your shelves then fill them with
+ * your stuff. By setting up our grids separately to our components you can
+ * move components around a lot more easily than if they had dimensions
+ * applied to them; this makes our front-ends a lot more adaptable and quick
+ * to work with.
+ *
+ * N.B. you should never apply any styles to a grid item, they are for layout
+ * purposes only. Apply styling to content inside a grid item.
+ *
+ * @markup
+   <div class="l-grid [modifier(s)]">
+     <div class="l-grid__item  u-one-half"> [...] </div>
+     <div class="l-grid__item  u-one-half"> [...] </div>
+   </div>
+
+   <div class="l-grid [modifier(s)]">
+     <div class="l-grid__item  u-one-third"> [...] </div>
+     <div class="l-grid__item  u-one-third"> [...] </div>
+     <div class="l-grid__item  u-one-third"> [...] </div>
+   </div>
+ *
+ * @demo
+ * http://codepen.io/chris-pearce/full/emQqxo
+ *
+ * @credit
+ * https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
+ */
+/**
+ * Settings.
+ */
+/**
+ * Gutter sizes.
+ */
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set
+ * globally. If it has been previously been defined, the following variable
+ * will be overridden and will be set to `true`.
+ */
+/**
+ * Grid container.
+ *
+ * 1. Negative `margin-left` to negate the columns gutters.
+ * 2. So it can work on inline elements e.g. `span`.
+ * 3. Dirty hack to remove browser generated whitespace between elements that
+ *    render as `display: inline-block`.
+ */
+.l-grid {
+  margin-left: -1.5rem;
+  display: block;
+  font-size: 0;
+}
+
+/**
+ * 1. Cause columns to stack side-by-side.
+ * 2. Space columns apart.
+ * 3. Full-width unless told to behave otherwise.
+ * 4. Align columns to the top of each other.
+ * 5. Reset font size to be the global default.
+ * 6. Required to combine fluid widths and fixed gutters.
+ */
+.l-grid__item {
+  display: inline-block;
+  padding-left: 1.5rem;
+  width: 100%;
+  vertical-align: top;
+  font-size: 1rem ;
+  line-height: 1.5 ;
+}
+
+/**
+ * Modifiers: gutters.
+ */
+.l-grid--gutterless {
+  margin-left: 0;
+}
+.l-grid--gutterless > .l-grid__item {
+  padding-left: 0;
+}
+
+.l-grid--gutter-tiny {
+  margin-left: -0.5rem;
+}
+.l-grid--gutter-tiny > .l-grid__item {
+  padding-left: 0.5rem;
+}
+
+.l-grid--gutter-small {
+  margin-left: -0.75rem;
+}
+.l-grid--gutter-small > .l-grid__item {
+  padding-left: 0.75rem;
+}
+
+.l-grid--gutter-large {
+  margin-left: -2.25rem;
+}
+.l-grid--gutter-large > .l-grid__item {
+  padding-left: 2.25rem;
+}
+
+.l-grid--gutter-huge {
+  margin-left: -3rem;
+}
+.l-grid--gutter-huge > .l-grid__item {
+  padding-left: 3rem;
+}
+
+/**
+ * Modifier: reversed.
+ *
+ * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+ * markup will display in order 4, 3, 2, 1 on your page.
+ */
+.l-grid--reversed {
+  direction: rtl;
+  text-align: left;
+}
+.l-grid--reversed > .l-grid__item {
+  direction: ltr;
+  text-align: left;
+}
+
+/**
+ * Modifiers: vertical alignments.
+ */
+.l-grid--align-middle > .l-grid__item {
+  vertical-align: middle;
+}
+
+.l-grid--align-bottom > .l-grid__item {
+  vertical-align: bottom;
+}
+
+/**
+ * Modifiers: horizontal alignments.
+ */
+.l-grid--align-right {
+  text-align: right;
+}
+.l-grid--align-right > .l-grid__item {
+  text-align: left;
+}
+
+.l-grid--align-center {
+  text-align: center;
+}
+.l-grid--align-center > .l-grid__item {
+  text-align: left;
+}
+
+/**
+ * Modifier: shrink wrap.
+ *
+ * Make it be the width of it's content.
+ */
+.l-grid--shrink-wrap > .l-grid__item {
+  width: auto;
+}
+
+/**
+ * OBJECTS.
+ */
+/**
+ * COMPONENTS.
+ */
+/**
+ * UTILITIES.
+ */
+/* ============================================================================
+   @UTILITIES -> WIDTHS
+   ========================================================================= */
+/**
+ * Apply different width treatments to elements. There are two different
+ * treatments you can apply:
+ *
+ * - Intrinsic widths
+ * - Percentage widths
+ *
+ * Percentage based width classes are generated by the
+ * `generate-percentage-classes-at-breakpoints()` mixin found here:
+ * Core -> Settings -> Mixins. Each class gets its value and is named after
+ * the Sass settings defined here: Core -> Settings -> Widths with the
+ * addition of the utility namespace: `u-`, e.g. `$one-half` = `.u-one-half`.
+ *
+ * The default format for these classes is:
+ *
+    .u-one-whole
+    .u-one-half
+    .u-one-third
+    .u-one-quarter
+ *
+ * ... and so on.
+ *
+ * Or in the more terse format:
+ *
+    .u-100pc
+    .u-50pc
+    .u-33pc
+    .u-25pc
+ *
+ * ... and so on.
+ *
+ * The more terse format is turned off by default, to turn it on change this
+ * setting: `$mixin-apply-terse-percentage-class-names` to 'true' above the
+ * `@import` for this mixin in your master stylesheet e.g.
+ *
+   $mixin-apply-terse-percentage-class-names: true;
+   @import "scally/core/mixins/generate-percentage-classes-at-breakpoints";
+ *
+ * All the width classes can be applied at different breakpoints with the
+ * format being:
+ *
+ * Using a `min-width` media query (default):
+ *
+   .u-[setting-name]-from-[breakpoint]
+ *
+ * E.g.
+ *
+   .u-one-half-from-lap
+ *
+ * Using a `max-width` media query:
+ *
+   .u-[setting-name]-up-to-[breakpoint]
+ *
+ * E.g.
+ *
+   .u-one-third-up-to-desk
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-width-shrink-wrap
+   .u-width-shrink-wrap--right
+   .u-width-fill-remaining-space
+   .u-width-fill-remaining-space-alt
+   .u-width-full-bleed
+   .u-one-whole
+   .u-one-half
+   .u-one-third
+   .u-two-thirds
+   .u-one-quarter
+   .u-two-quarters
+   .u-three-quarters
+   .u-one-fifth
+   .u-two-fifths
+   .u-three-fifths
+   .u-four-fifths
+   .u-one-sixth
+   .u-two-sixths
+   .u-three-sixths
+   .u-four-sixths
+   .u-five-sixths
+   .u-one-seventh
+   .u-two-sevenths
+   .u-three-sevenths
+   .u-four-sevenths
+   .u-five-sevenths
+   .u-six-sevenths
+   .u-one-eighth
+   .u-two-eighths
+   .u-three-eighths
+   .u-four-eighths
+   .u-five-eighths
+   .u-six-eighths
+   .u-seven-eighths
+   .u-one-ninth
+   .u-two-ninths
+   .u-three-ninths
+   .u-four-ninths
+   .u-five-ninths
+   .u-six-ninths
+   .u-seven-ninths
+   .u-eight-ninths
+   .u-one-tenth
+   .u-two-tenths
+   .u-three-tenths
+   .u-four-tenths
+   .u-five-tenths
+   .u-six-tenths
+   .u-seven-tenths
+   .u-eight-tenths
+   .u-nine-tenths
+   .u-one-eleventh
+   .u-two-elevenths
+   .u-three-elevenths
+   .u-four-elevenths
+   .u-five-elevenths
+   .u-six-elevenths
+   .u-seven-elevenths
+   .u-eight-elevenths
+   .u-nine-elevenths
+   .u-ten-elevenths
+   .u-one-twelfth
+   .u-two-twelfths
+   .u-three-twelfths
+   .u-four-twelfths
+   .u-five-twelfths
+   .u-six-twelfths
+   .u-seven-twelfths
+   .u-eight-twelfths
+   .u-nine-twelfths
+   .u-ten-twelfths
+   .u-eleven-twelfths
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set
+ * globally. If it has been previously been defined, the following variable
+ * will be overridden and will be set to `true`.
+ */
+/**
+ * Intrinsic widths.
+ */
+/**
+ * Make an element shrink wrap its content.
+ */
+.u-width-shrink-wrap {
+  display: block !important;
+  float: left !important;
+  width: auto !important;
+}
+
+.u-width-shrink-wrap--right {
+  float: right !important;
+}
+
+/**
+ * Make an element fill the remaining space.
+ *
+ * N.B. for the alternative method do not use if child elements might be wider
+ * than the remaining space because in Chrome, Safari, and Firefox it results
+ * in undesired layout.
+ */
+.u-width-fill-remaining-space {
+  display: block !important;
+  overflow: hidden !important;
+  width: auto !important;
+}
+
+.u-width-fill-remaining-space-alt {
+  display: table-cell !important;
+  max-width: 100% !important;
+  width: 10000px !important;
+}
+
+/**
+ * Make an element the width of its parent.
+ */
+.u-width-full-bleed {
+  display: block !important;
+  width: 100% !important;
+}
+
+/**
+ * Percentage widths.
+ */
+.u-one-whole {
+  width: 100%;
+}
+
+.u-one-half {
+  width: 50%;
+}
+
+.u-one-third {
+  width: 33.33333%;
+}
+
+.u-two-thirds {
+  width: 66.66667%;
+}
+
+.u-one-quarter {
+  width: 25%;
+}
+
+.u-two-quarters {
+  width: 50%;
+}
+
+.u-three-quarters {
+  width: 75%;
+}
+
+.u-one-fifth {
+  width: 20%;
+}
+
+.u-two-fifths {
+  width: 40%;
+}
+
+.u-three-fifths {
+  width: 60%;
+}
+
+.u-four-fifths {
+  width: 80%;
+}
+
+.u-one-sixth {
+  width: 16.66667%;
+}
+
+.u-two-sixths {
+  width: 33.33333%;
+}
+
+.u-three-sixths {
+  width: 50%;
+}
+
+.u-four-sixths {
+  width: 66.66667%;
+}
+
+.u-five-sixths {
+  width: 83.33333%;
+}
+
+.u-one-seventh {
+  width: 14.28571%;
+}
+
+.u-two-sevenths {
+  width: 28.57143%;
+}
+
+.u-three-sevenths {
+  width: 42.85714%;
+}
+
+.u-four-sevenths {
+  width: 57.14286%;
+}
+
+.u-five-sevenths {
+  width: 71.42857%;
+}
+
+.u-six-sevenths {
+  width: 85.71429%;
+}
+
+.u-one-eighth {
+  width: 12.5%;
+}
+
+.u-two-eighths {
+  width: 25%;
+}
+
+.u-three-eighths {
+  width: 37.5%;
+}
+
+.u-four-eighths {
+  width: 50%;
+}
+
+.u-five-eighths {
+  width: 62.5%;
+}
+
+.u-six-eighths {
+  width: 75%;
+}
+
+.u-seven-eighths {
+  width: 87.5%;
+}
+
+.u-one-ninth {
+  width: 11.11111%;
+}
+
+.u-two-ninths {
+  width: 22.22222%;
+}
+
+.u-three-ninths {
+  width: 33.33333%;
+}
+
+.u-four-ninths {
+  width: 44.44444%;
+}
+
+.u-five-ninths {
+  width: 55.55556%;
+}
+
+.u-six-ninths {
+  width: 66.66667%;
+}
+
+.u-seven-ninths {
+  width: 77.77778%;
+}
+
+.u-eight-ninths {
+  width: 88.88889%;
+}
+
+.u-one-tenth {
+  width: 10%;
+}
+
+.u-two-tenths {
+  width: 20%;
+}
+
+.u-three-tenths {
+  width: 30%;
+}
+
+.u-four-tenths {
+  width: 40%;
+}
+
+.u-five-tenths {
+  width: 50%;
+}
+
+.u-six-tenths {
+  width: 60%;
+}
+
+.u-seven-tenths {
+  width: 70%;
+}
+
+.u-eight-tenths {
+  width: 80%;
+}
+
+.u-nine-tenths {
+  width: 90%;
+}
+
+.u-one-eleventh {
+  width: 9.09091%;
+}
+
+.u-two-elevenths {
+  width: 18.18182%;
+}
+
+.u-three-elevenths {
+  width: 27.27273%;
+}
+
+.u-four-elevenths {
+  width: 36.36364%;
+}
+
+.u-five-elevenths {
+  width: 45.45455%;
+}
+
+.u-six-elevenths {
+  width: 54.54545%;
+}
+
+.u-seven-elevenths {
+  width: 63.63636%;
+}
+
+.u-eight-elevenths {
+  width: 72.72727%;
+}
+
+.u-nine-elevenths {
+  width: 81.81818%;
+}
+
+.u-ten-elevenths {
+  width: 90.90909%;
+}
+
+.u-one-twelfth {
+  width: 8.33333%;
+}
+
+.u-two-twelfths {
+  width: 16.66667%;
+}
+
+.u-three-twelfths {
+  width: 25%;
+}
+
+.u-four-twelfths {
+  width: 33.33333%;
+}
+
+.u-five-twelfths {
+  width: 41.66667%;
+}
+
+.u-six-twelfths {
+  width: 50%;
+}
+
+.u-seven-twelfths {
+  width: 58.33333%;
+}
+
+.u-eight-twelfths {
+  width: 66.66667%;
+}
+
+.u-nine-twelfths {
+  width: 75%;
+}
+
+.u-ten-twelfths {
+  width: 83.33333%;
+}
+
+.u-eleven-twelfths {
+  width: 91.66667%;
+}
+
+@media (min-width: 40.0625em) {
+  .u-one-whole-from-lap {
+    width: 100%;
+  }
+
+  .u-one-half-from-lap {
+    width: 50%;
+  }
+
+  .u-one-third-from-lap {
+    width: 33.33333%;
+  }
+
+  .u-two-thirds-from-lap {
+    width: 66.66667%;
+  }
+
+  .u-one-quarter-from-lap {
+    width: 25%;
+  }
+
+  .u-two-quarters-from-lap {
+    width: 50%;
+  }
+
+  .u-three-quarters-from-lap {
+    width: 75%;
+  }
+
+  .u-one-fifth-from-lap {
+    width: 20%;
+  }
+
+  .u-two-fifths-from-lap {
+    width: 40%;
+  }
+
+  .u-three-fifths-from-lap {
+    width: 60%;
+  }
+
+  .u-four-fifths-from-lap {
+    width: 80%;
+  }
+
+  .u-one-sixth-from-lap {
+    width: 16.66667%;
+  }
+
+  .u-two-sixths-from-lap {
+    width: 33.33333%;
+  }
+
+  .u-three-sixths-from-lap {
+    width: 50%;
+  }
+
+  .u-four-sixths-from-lap {
+    width: 66.66667%;
+  }
+
+  .u-five-sixths-from-lap {
+    width: 83.33333%;
+  }
+
+  .u-one-seventh-from-lap {
+    width: 14.28571%;
+  }
+
+  .u-two-sevenths-from-lap {
+    width: 28.57143%;
+  }
+
+  .u-three-sevenths-from-lap {
+    width: 42.85714%;
+  }
+
+  .u-four-sevenths-from-lap {
+    width: 57.14286%;
+  }
+
+  .u-five-sevenths-from-lap {
+    width: 71.42857%;
+  }
+
+  .u-six-sevenths-from-lap {
+    width: 85.71429%;
+  }
+
+  .u-one-eighth-from-lap {
+    width: 12.5%;
+  }
+
+  .u-two-eighths-from-lap {
+    width: 25%;
+  }
+
+  .u-three-eighths-from-lap {
+    width: 37.5%;
+  }
+
+  .u-four-eighths-from-lap {
+    width: 50%;
+  }
+
+  .u-five-eighths-from-lap {
+    width: 62.5%;
+  }
+
+  .u-six-eighths-from-lap {
+    width: 75%;
+  }
+
+  .u-seven-eighths-from-lap {
+    width: 87.5%;
+  }
+
+  .u-one-ninth-from-lap {
+    width: 11.11111%;
+  }
+
+  .u-two-ninths-from-lap {
+    width: 22.22222%;
+  }
+
+  .u-three-ninths-from-lap {
+    width: 33.33333%;
+  }
+
+  .u-four-ninths-from-lap {
+    width: 44.44444%;
+  }
+
+  .u-five-ninths-from-lap {
+    width: 55.55556%;
+  }
+
+  .u-six-ninths-from-lap {
+    width: 66.66667%;
+  }
+
+  .u-seven-ninths-from-lap {
+    width: 77.77778%;
+  }
+
+  .u-eight-ninths-from-lap {
+    width: 88.88889%;
+  }
+
+  .u-one-tenth-from-lap {
+    width: 10%;
+  }
+
+  .u-two-tenths-from-lap {
+    width: 20%;
+  }
+
+  .u-three-tenths-from-lap {
+    width: 30%;
+  }
+
+  .u-four-tenths-from-lap {
+    width: 40%;
+  }
+
+  .u-five-tenths-from-lap {
+    width: 50%;
+  }
+
+  .u-six-tenths-from-lap {
+    width: 60%;
+  }
+
+  .u-seven-tenths-from-lap {
+    width: 70%;
+  }
+
+  .u-eight-tenths-from-lap {
+    width: 80%;
+  }
+
+  .u-nine-tenths-from-lap {
+    width: 90%;
+  }
+
+  .u-one-eleventh-from-lap {
+    width: 9.09091%;
+  }
+
+  .u-two-elevenths-from-lap {
+    width: 18.18182%;
+  }
+
+  .u-three-elevenths-from-lap {
+    width: 27.27273%;
+  }
+
+  .u-four-elevenths-from-lap {
+    width: 36.36364%;
+  }
+
+  .u-five-elevenths-from-lap {
+    width: 45.45455%;
+  }
+
+  .u-six-elevenths-from-lap {
+    width: 54.54545%;
+  }
+
+  .u-seven-elevenths-from-lap {
+    width: 63.63636%;
+  }
+
+  .u-eight-elevenths-from-lap {
+    width: 72.72727%;
+  }
+
+  .u-nine-elevenths-from-lap {
+    width: 81.81818%;
+  }
+
+  .u-ten-elevenths-from-lap {
+    width: 90.90909%;
+  }
+
+  .u-one-twelfth-from-lap {
+    width: 8.33333%;
+  }
+
+  .u-two-twelfths-from-lap {
+    width: 16.66667%;
+  }
+
+  .u-three-twelfths-from-lap {
+    width: 25%;
+  }
+
+  .u-four-twelfths-from-lap {
+    width: 33.33333%;
+  }
+
+  .u-five-twelfths-from-lap {
+    width: 41.66667%;
+  }
+
+  .u-six-twelfths-from-lap {
+    width: 50%;
+  }
+
+  .u-seven-twelfths-from-lap {
+    width: 58.33333%;
+  }
+
+  .u-eight-twelfths-from-lap {
+    width: 66.66667%;
+  }
+
+  .u-nine-twelfths-from-lap {
+    width: 75%;
+  }
+
+  .u-ten-twelfths-from-lap {
+    width: 83.33333%;
+  }
+
+  .u-eleven-twelfths-from-lap {
+    width: 91.66667%;
+  }
+}
+/* Expert360 Styles
+   ========================================================================= */

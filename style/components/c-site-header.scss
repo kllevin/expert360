@@ -9,8 +9,11 @@
 
 
 .c-site-header {
-  //background-color: $color-white;
-  background: linear-gradient(to right, $color-navy-blue-dark 0%, $color-navy-blue-dark $fixed-left-side-width, $color-white $fixed-left-side-width, $color-white 100%);
+  background-color: $color-navy-blue-dark;
+
+  @include respond-to(lap-large) {
+    background: linear-gradient(to right, $color-navy-blue-dark 0%, $color-navy-blue-dark $fixed-left-side-width, $color-white $fixed-left-side-width, $color-white 100%);
+  }
 }
 
 
@@ -19,7 +22,6 @@
  */
 
 .c-site-header__logo {
-  //background-color: $color-navy-blue-dark;
   padding-left: to-rem($spacing-base);
 }
 
@@ -41,6 +43,7 @@
  */
 
 .c-site-header__nav {
+  background-color: $color-white;
   padding-left: to-rem($spacing-base);
   padding-right: to-rem($spacing-base);
 }

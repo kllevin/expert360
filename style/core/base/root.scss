@@ -10,7 +10,11 @@
 
 
 html {
-  background-color: $color-off-white;
-  background: linear-gradient(to right, $color-navy-blue-light 0%, $color-navy-blue-light $fixed-left-side-width, $color-off-white $fixed-left-side-width, $color-off-white 100%);
+  background-color: $color-navy-blue-light;
   padding-bottom: to-rem($spacing-double);
+
+  @include respond-to(lap-large) {
+    background-color: $color-off-white;
+    background: linear-gradient(to right, $color-navy-blue-light 0%, $color-navy-blue-light $fixed-left-side-width, $color-off-white $fixed-left-side-width, $color-off-white 100%);
+  }
 }

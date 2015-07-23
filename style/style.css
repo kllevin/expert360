@@ -4895,10 +4895,15 @@ h6:last-child,
  * of 2 columns.
  */
 html {
-  background-color: #eff2f3;
-  background: -webkit-linear-gradient(left, #21282e 0%, #21282e 260px, #eff2f3 260px, #eff2f3 100%);
-  background: linear-gradient(to right, #21282e 0%, #21282e 260px, #eff2f3 260px, #eff2f3 100%);
+  background-color: #21282e;
   padding-bottom: 3.2rem;
+}
+@media (min-width: 56.3125em) {
+  html {
+    background-color: #eff2f3;
+    background: -webkit-linear-gradient(left, #21282e 0%, #21282e 260px, #eff2f3 260px, #eff2f3 100%);
+    background: linear-gradient(to right, #21282e 0%, #21282e 260px, #eff2f3 260px, #eff2f3 100%);
+  }
 }
 
 /* ============================================================================
@@ -4957,8 +4962,13 @@ h2, .h2 {
  * The site header.
  */
 .c-site-header {
-  background: -webkit-linear-gradient(left, #1b2127 0%, #1b2127 260px, #fff 260px, #fff 100%);
-  background: linear-gradient(to right, #1b2127 0%, #1b2127 260px, #fff 260px, #fff 100%);
+  background-color: #1b2127;
+}
+@media (min-width: 56.3125em) {
+  .c-site-header {
+    background: -webkit-linear-gradient(left, #1b2127 0%, #1b2127 260px, #fff 260px, #fff 100%);
+    background: linear-gradient(to right, #1b2127 0%, #1b2127 260px, #fff 260px, #fff 100%);
+  }
 }
 
 /**
@@ -4981,6 +4991,7 @@ h2, .h2 {
  * Nav.
  */
 .c-site-header__nav {
+  background-color: #fff;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
 }
@@ -5001,12 +5012,16 @@ h2, .h2 {
  * The site footer
  */
 .c-site-footer {
-  position: absolute;
-  bottom: 24px;
-  left: 0;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
-  width: 260px;
+}
+@media (min-width: 56.3125em) {
+  .c-site-footer {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    width: 260px;
+  }
 }
 
 /* ============================================================================
@@ -5028,6 +5043,7 @@ h2, .h2 {
  * The main content area.
  */
 .c-main-content {
+  background-color: #eff2f3;
   padding-left: 0.8rem;
   padding-right: 1.6rem;
 }

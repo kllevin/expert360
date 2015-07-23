@@ -9,10 +9,14 @@
 
 
 .c-site-footer {
-  position: absolute;
-  bottom: $spacing-base * 1px;
-  left: 0;
   padding-left: to-rem($spacing-base);
   padding-right: to-rem($spacing-base);
-  width: $fixed-left-side-width;
+
+  @include respond-to(lap-large) {
+    position: absolute;
+    bottom: $spacing-base * 1px;
+    left: 0;
+    width: $fixed-left-side-width;
+  }
 }
+

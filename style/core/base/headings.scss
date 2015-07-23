@@ -1,0 +1,19 @@
+/* ============================================================================
+   @CORE -> BASE -> HEADINGS
+   ========================================================================= */
+
+/**
+ * Heading styles per brand guidelines.
+ */
+
+h1 {
+   @include to-rem(text-shadow, 2 2 0 rgba(0, 0, 0, 0.3));
+   font-weight: 200;
+   line-height: 1.2;
+   color: #fff;
+}
+
+h2, .h2 {
+   font-weight: 300;
+   line-height: 1.4;
+}

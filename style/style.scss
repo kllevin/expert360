@@ -120,7 +120,7 @@ $html-element-background-color:  $color-off-white;
 
 @import "../node_modules/scally/core/base/forms";
 
-
+$apply-details-marker: true;
 @import "../node_modules/scally/core/base/details";
 
 @import "../node_modules/scally/core/base/headings";
@@ -195,6 +195,8 @@ $l-container-maximum-width: 1200;
 // Base
 @import "core/base/root";
 
+@import "core/base/headings";
+
 
 /**
  * LAYOUT.
@@ -216,5 +218,11 @@ $l-container-maximum-width: 1200;
 @import "components/c-main-content";
 
 @import "components/c-banner";
+
+@import "components/c-navigation";
+
+@import "components/c-box";
+
+@import "components/c-styleguide";
 
 

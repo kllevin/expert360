@@ -8,7 +8,12 @@ To run this project you will need:
 
 ### Grunt Tasks
 
-- `grunt style` compile SASS and autoprefix 
+- `grunt style` compile SASS and autoprefix
+
+### Explain
+
+- CSS Gradients don't work with IE9 (fallback?)
+- Look at CSS Gradient bug with chrome?
 
 ### TODO
 - GH Pages?

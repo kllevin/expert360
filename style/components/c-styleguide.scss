@@ -1,0 +1,21 @@
+/* ============================================================================
+   @COMPONENTS -> STYLEGUIDE
+   ========================================================================= */
+
+
+/**
+ * Controlling the styles for each section of the styleguide
+ */
+
+.sg-section {
+  background: $color-white;
+  border: 1px solid $color-black;
+  padding: to-rem($spacing-half);
+  margin-bottom: to-rem($spacing-half);
+}
+
+.sg-section__title {
+  color: $color-black;
+  border-bottom: 1px solid $color-black;
+
+}

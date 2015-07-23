@@ -1,0 +1,60 @@
+/* ============================================================================
+   @COMPONENTS -> NAVIGATION
+   ========================================================================= */
+
+
+/**
+ * Section Navigation.
+ */
+
+
+.c-nav {
+  font-size: to-rem(14);
+  font-weight: 300;
+}
+
+
+/**
+ * Top Level.
+ */
+
+.c-nav__primary-item{
+  border-bottom: 1px solid #2c3944;
+}
+
+.c-nav__primary-item__link {
+  display: block;
+  color: #72899e;
+  padding: to-rem($spacing-half) 0;
+  text-transform: uppercase;
+
+  &:hover,
+  &:active,
+  &.is-active {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
+
+.c-nav__secondary-item {margin-bottom: to-rem($spacing-half);}
+
+.c-nav__secondary-item__link {
+  display: block;
+  text-transform: capitalize;
+  color: #72899e;
+
+  &:hover,
+  &:active,
+  &.is-active {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.c-nav__secondary-item--disabled {
+  color: #3e4a56;
+  font-style: italic;
+  text-transform: capitalize;
+}

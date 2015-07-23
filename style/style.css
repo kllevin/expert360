@@ -1692,6 +1692,9 @@ summary {
    * Control the visibility of the `detail`s marker.
    */
 }
+summary::-webkit-details-marker {
+  display: none;
+}
 
 /* ============================================================================
    @CORE -> BASE -> HEADINGS
@@ -4898,6 +4901,24 @@ html {
   padding-bottom: 3.2rem;
 }
 
+/* ============================================================================
+   @CORE -> BASE -> HEADINGS
+   ========================================================================= */
+/**
+ * Heading styles per brand guidelines.
+ */
+h1 {
+  text-shadow: 0.13333rem 0.13333rem 0 rgba(0, 0, 0, 0.3);
+  font-weight: 200;
+  line-height: 1.2;
+  color: #fff;
+}
+
+h2, .h2 {
+  font-weight: 300;
+  line-height: 1.4;
+}
+
 /**
  * LAYOUT.
  */
@@ -5021,4 +5042,90 @@ html {
   background: url("https://expert360.com/images/companyProducts/home/hero_home.jpg?34ae2a2e") no-repeat 0 0;
   background-size: cover;
   min-height: 17.33333rem;
+}
+
+/* ============================================================================
+   @COMPONENTS -> NAVIGATION
+   ========================================================================= */
+/**
+ * Section Navigation.
+ */
+.c-nav {
+  font-size: 0.93333rem;
+  font-weight: 300;
+}
+
+/**
+ * Top Level.
+ */
+.c-nav__primary-item {
+  border-bottom: 1px solid #2c3944;
+}
+
+.c-nav__primary-item__link {
+  display: block;
+  color: #72899e;
+  padding: 0.8rem 0;
+  text-transform: uppercase;
+}
+.c-nav__primary-item__link:hover, .c-nav__primary-item__link:active, .c-nav__primary-item__link.is-active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.c-nav__secondary-item {
+  margin-bottom: 0.8rem;
+}
+
+.c-nav__secondary-item__link {
+  display: block;
+  text-transform: capitalize;
+  color: #72899e;
+}
+.c-nav__secondary-item__link:hover, .c-nav__secondary-item__link:active, .c-nav__secondary-item__link.is-active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.c-nav__secondary-item--disabled {
+  color: #3e4a56;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+/* ============================================================================
+   @COMPONENTS -> NAVIGATION
+   ========================================================================= */
+/**
+ * Basic boxes used to separate sections.
+ */
+.c-box {
+  padding: 1.6rem;
+  border-radius: 0.26667rem;
+  border: 1px solid #dbe5e7;
+  background-color: #e8edef;
+}
+
+.c-box--basic {
+  box-shadow: 0 0.13333rem 0.13333rem -0.13333rem rgba(0, 0, 0, 0.13);
+  background-color: #fff;
+  border-color: #e8eaeb;
+}
+
+/* ============================================================================
+   @COMPONENTS -> STYLEGUIDE
+   ========================================================================= */
+/**
+ * Controlling the styles for each section of the styleguide
+ */
+.sg-section {
+  background: #fff;
+  border: 1px solid #000;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.sg-section__title {
+  color: #000;
+  border-bottom: 1px solid #000;
 }

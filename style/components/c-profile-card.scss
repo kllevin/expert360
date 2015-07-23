@@ -1,0 +1,22 @@
+/* ============================================================================
+   @COMPONENTS -> PROFILE CARD
+   ========================================================================= */
+
+
+/**
+ * Round Avatar.
+ */
+
+.c-profile-card {
+  background: pink;
+}
+
+.c-profile-card__title {
+  @include to-rem(text-shadow, 2 2 0 rgba(0, 0, 0, 0.3));
+  font-size: to-rem(50);
+  font-weight: 200;
+  line-height: 1.2;
+  color: #fff;
+
+  margin-bottom: 0;
+}

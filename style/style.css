@@ -2276,6 +2276,152 @@ h6:last-child,
 }
 
 /* ============================================================================
+   @LAYOUT -> SIDE-BY-SIDE
+   ========================================================================= */
+/**
+ * Place any two elements side-by-side, typically for an image- and text-like
+ * content.
+ *
+ * @markup
+   <div class="l-side-by-side [modifier(s)]">
+     <div class="l-side-by-side__left"> [...] </div>
+     <div class="l-side-by-side__right"> [...] </div>
+   </div>
+ *
+ * @credit
+ * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ */
+/**
+ * Settings.
+ */
+/**
+ * 1. So it can work on inline elements e.g. `span`.
+ */
+.l-side-by-side {
+  display: block;
+}
+.l-side-by-side:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+ * Left side.
+ */
+.l-side-by-side__left {
+  float: left;
+  margin-right: 1.6rem;
+  /**
+   * Modifiers: gutter sizing.
+   */
+  /**
+   * Modifiers: reversed.
+   *
+   * Switch the sides i.e. left becomes right and right becomes left.
+   */
+  /**
+   * Modifier: flush.
+   *
+   * Remove the gutter.
+   */
+  /**
+   * Modifier: remove.
+   *
+   * Turn off the side-by-side layout so the two elements stack on top of
+   * each other at the palm breakpoint (or whatever you specify) and provide
+   * bottom spacing between the two elements via the gutter size settings.
+   *
+   * Make optional as this uses a fair amount of CSS.
+   *
+   * N.B. we use a `max-width` media query for this which is something we
+   * wouldn't usually do as we build Mobile First however this is simply the
+   * most pragmatic way of accomplishing this. Also this layout module's
+   * default state is side-by-side, so its stacked state is the exception,
+   * rather than the rule.
+   */
+}
+.l-side-by-side--gutter-tiny > .l-side-by-side__left {
+  margin-right: 0.53333rem;
+}
+.l-side-by-side--gutter-small > .l-side-by-side__left {
+  margin-right: 0.8rem;
+}
+.l-side-by-side--gutter-large > .l-side-by-side__left {
+  margin-right: 2.4rem;
+}
+.l-side-by-side--gutter-huge > .l-side-by-side__left {
+  margin-right: 3.2rem;
+}
+.l-side-by-side--reversed > .l-side-by-side__left {
+  float: right;
+  margin-right: 0;
+  margin-left: 1.6rem;
+}
+.l-side-by-side--reversed.l-side-by-side--gutter-tiny > .l-side-by-side__left {
+  margin-left: 0.53333rem;
+}
+.l-side-by-side--reversed.l-side-by-side--gutter-small > .l-side-by-side__left {
+  margin-left: 0.8rem;
+}
+.l-side-by-side--reversed.l-side-by-side--gutter-large > .l-side-by-side__left {
+  margin-left: 2.4rem;
+}
+.l-side-by-side--reversed.l-side-by-side--gutter-huge > .l-side-by-side__left {
+  margin-left: 3.2rem;
+}
+.l-side-by-side--flush > .l-side-by-side__left {
+  margin-right: 0;
+}
+.l-side-by-side--reversed.l-side-by-side--flush > .l-side-by-side__left {
+  margin-left: 0;
+}
+@media (max-width: 40em) {
+  .l-side-by-side__left {
+    /**
+     * Modifiers: bottom spacing sizing.
+     */
+    /**
+     * Modifier: flush.
+     *
+     * Remove the bottom spacing.
+     */
+  }
+  .l-side-by-side--remove > .l-side-by-side__left {
+    float: none;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 1.6rem;
+  }
+  .l-side-by-side--remove.l-side-by-side--gutter-tiny > .l-side-by-side__left {
+    margin-bottom: 0.53333rem;
+  }
+  .l-side-by-side--remove.l-side-by-side--gutter-small > .l-side-by-side__left {
+    margin-bottom: 0.8rem;
+  }
+  .l-side-by-side--remove.l-side-by-side--gutter-large > .l-side-by-side__left {
+    margin-bottom: 2.4rem;
+  }
+  .l-side-by-side--remove.l-side-by-side--gutter-huge > .l-side-by-side__left {
+    margin-bottom: 3.2rem;
+  }
+  .l-side-by-side--remove.l-side-by-side--flush > .l-side-by-side__left {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Right side.
+ *
+ * 1. Create a new block formatting context (NBFC).
+ * 2. Avoid shrink-wrap behavior of table-cell.
+ */
+.l-side-by-side__right {
+  display: table-cell;
+  width: 10000px;
+}
+
+/* ============================================================================
    @LAYOUT -> SIDE-BY-SIDE ALTERNATE VERSION
    ========================================================================= */
 /**
@@ -4912,13 +5058,6 @@ html {
 /**
  * Heading styles per brand guidelines.
  */
-h1 {
-  text-shadow: 0.13333rem 0.13333rem 0 rgba(0, 0, 0, 0.3);
-  font-weight: 200;
-  line-height: 1.2;
-  color: #fff;
-}
-
 h2, .h2 {
   font-weight: 300;
   line-height: 1.4;
@@ -5047,6 +5186,12 @@ h2, .h2 {
   padding-left: 0.8rem;
   padding-right: 1.6rem;
 }
+@media (min-width: 40em) {
+  .c-main-content {
+    background-color: transparent;
+    margin-top: -4rem;
+  }
+}
 
 /* ============================================================================
    @COMPONENTS -> BANNER
@@ -5110,6 +5255,39 @@ h2, .h2 {
 }
 
 /* ============================================================================
+   @COMPONENTS -> AVATAR
+   ========================================================================= */
+/**
+ * Round Avatar.
+ */
+.c-avatar {
+  background: #fff;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  width: 6.66667rem;
+  box-shadow: 0 0.13333rem 0.13333rem -0.13333rem rgba(0, 0, 0, 0.13);
+}
+
+/* ============================================================================
+   @COMPONENTS -> PROFILE CARD
+   ========================================================================= */
+/**
+ * Round Avatar.
+ */
+.c-profile-card {
+  background: pink;
+}
+
+.c-profile-card__title {
+  text-shadow: 0.13333rem 0.13333rem 0 rgba(0, 0, 0, 0.3);
+  font-size: 3.33333rem;
+  font-weight: 200;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+/* ============================================================================
    @COMPONENTS -> NAVIGATION
    ========================================================================= */
 /**
@@ -5120,12 +5298,17 @@ h2, .h2 {
   border-radius: 0.26667rem;
   border: 1px solid #dbe5e7;
   background-color: #e8edef;
+  margin-bottom: 0.8rem;
 }
 
 .c-box--basic {
   box-shadow: 0 0.13333rem 0.13333rem -0.13333rem rgba(0, 0, 0, 0.13);
   background-color: #fff;
   border-color: #e8eaeb;
+}
+
+.c-box__title {
+  color: #f16439;
 }
 
 /* ============================================================================

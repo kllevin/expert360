@@ -155,6 +155,8 @@ $l-container-maximum-width: 1200;
 @import "../node_modules/scally/layout/l-grid";
 
 // Side by side
+@import "../node_modules/scally/layout/l-side-by-side";
+
 @import "../node_modules/scally/layout/l-side-by-side-alt";
 
 
@@ -221,8 +223,19 @@ $l-container-maximum-width: 1200;
 
 @import "components/c-navigation";
 
+@import "components/c-avatar";
+
+@import "components/c-profile-card";
+
 @import "components/c-box";
 
 @import "components/c-styleguide";
 
 
+/**
+ * Temporary.
+ */
+
+.c-box__title {
+   color: $color-brand;
+}

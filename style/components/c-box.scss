@@ -12,6 +12,7 @@
    @include to-rem(border-radius, $border-radius);
    border: 1px solid #dbe5e7;
    background-color: #e8edef;
+   margin-bottom: to-rem($spacing-half);
 }
 
 .c-box--basic {

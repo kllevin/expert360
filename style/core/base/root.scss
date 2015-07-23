@@ -1,0 +1,16 @@
+/* ============================================================================
+   @CORE -> BASE -> ROOT
+   ========================================================================= */
+
+
+/**
+ * The root element: `html`, we apply a CSS gradient to create the illusion
+ * of 2 columns.
+ */
+
+
+html {
+  background-color: $color-off-white;
+  background: linear-gradient(to right, $color-navy-blue-light 0%, $color-navy-blue-light $fixed-left-side-width, $color-off-white $fixed-left-side-width, $color-off-white 100%);
+  padding-bottom: to-rem($spacing-double);
+}

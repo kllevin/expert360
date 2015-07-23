@@ -15,7 +15,15 @@
  * N.B. define first so they can be used throughout your styles.
  */
 
-//@import "settings";
+// Colours
+$color-off-white:         #eff2f3;
+
+$color-navy-blue-dark:    #1b2127;
+
+$color-navy-blue-light:   #21282e;
+
+// Fixed left side width
+$fixed-left-side-width:   260px;
 
 
 
@@ -41,6 +49,12 @@
  */
 
 // Settings
+
+$font-size:             15;
+$font-family-base:      "Open Sans", sans-serif;
+$font-size-heading-1:   64;
+$font-size-heading-2:   24;
+$font-size-heading-5:   15;
 @import "../node_modules/scally/core/settings/typography";
 
 @import "../node_modules/scally/core/settings/spacing";
@@ -51,6 +65,8 @@
 
 @import "../node_modules/scally/core/settings/widths";
 
+$color-brand:  #f16439;
+$color-text-base: #21282e;
 @import "../node_modules/scally/core/settings/colours";
 
 @import "../node_modules/scally/core/settings/positioning";
@@ -96,11 +112,14 @@
 @import "../node_modules/scally/core/reset";
 
 // Base
+
+$html-element-background-color:  $color-off-white;
 @import "../node_modules/scally/core/base/root";
 
 @import "../node_modules/scally/core/base/abbreviation";
 
 @import "../node_modules/scally/core/base/forms";
+
 
 @import "../node_modules/scally/core/base/details";
 
@@ -127,10 +146,16 @@
  */
 
 // Main container
+$l-container-width: 100%;
+$l-container-minimum-width: 220;
+$l-container-maximum-width: 1200;
 @import "../node_modules/scally/layout/l-container";
 
 // Grid
 @import "../node_modules/scally/layout/l-grid";
+
+// Side by side
+@import "../node_modules/scally/layout/l-side-by-side-alt";
 
 
 /**
@@ -147,6 +172,14 @@
  * UTILITIES.
  */
 
+@import "../node_modules/scally/utilities/u-clear-fix";
+
+@import "../node_modules/scally/utilities/u-hide";
+
+@import "../node_modules/scally/utilities/u-spacing";
+
+@import "../node_modules/scally/utilities/u-text";
+
 @import "../node_modules/scally/utilities/u-widths";
 
 
@@ -154,3 +187,34 @@
 
 /* Expert360 Styles
    ========================================================================= */
+
+/**
+ * CORE.
+ */
+
+// Base
+@import "core/base/root";
+
+
+/**
+ * LAYOUT.
+ */
+
+ @import "layout/l-grid-master";
+
+
+/**
+ * COMPONENTS.
+ */
+
+@import "components/c-site-header";
+
+@import "components/c-site-footer";
+
+@import "components/c-aside";
+
+@import "components/c-main-content";
+
+@import "components/c-banner";
+
+

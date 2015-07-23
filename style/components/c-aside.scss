@@ -1,0 +1,15 @@
+/* ============================================================================
+   @COMPONENTS -> ASIDE
+   ========================================================================= */
+
+
+/**
+ * The `aside` component to the main content area.
+ */
+
+
+.c-aside {
+  padding-left: to-rem($spacing-base);
+  padding-right: to-rem($spacing-base);
+  padding-top: to-rem($spacing-base-plus-half);
+}

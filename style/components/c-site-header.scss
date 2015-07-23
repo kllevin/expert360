@@ -1,0 +1,57 @@
+/* ============================================================================
+   @COMPONENTS -> SITE HEADER
+   ========================================================================= */
+
+
+/**
+ * The site header.
+ */
+
+
+.c-site-header {
+  //background-color: $color-white;
+  background: linear-gradient(to right, $color-navy-blue-dark 0%, $color-navy-blue-dark $fixed-left-side-width, $color-white $fixed-left-side-width, $color-white 100%);
+}
+
+
+/**
+ * Logo.
+ */
+
+.c-site-header__logo {
+  //background-color: $color-navy-blue-dark;
+  padding-left: to-rem($spacing-base);
+}
+
+
+/**
+ * Logo link.
+ */
+
+.c-site-header__logo__link {
+  display: inline-block;
+  // This needs to equal the height of the nav part of the header
+  min-height: to-rem(48);
+  padding-top: to-rem(9.5);
+}
+
+
+/**
+ * Nav.
+ */
+
+.c-site-header__nav {
+  padding-left: to-rem($spacing-base);
+  padding-right: to-rem($spacing-base);
+}
+
+
+/**
+ * Nav links.
+ */
+
+.c-site-header__nav__links {
+  display: inline-block;
+  padding-top: to-rem($spacing-half);
+  padding-bottom: to-rem($spacing-half);
+}

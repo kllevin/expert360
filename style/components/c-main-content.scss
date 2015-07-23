@@ -1,0 +1,15 @@
+/* ============================================================================
+   @COMPONENTS -> MAIN CONTENT
+   ========================================================================= */
+
+
+/**
+ * The main content area.
+ */
+
+
+.c-main-content {
+  padding-left: to-rem($spacing-half);
+  padding-right: to-rem($spacing-base);
+  //margin-top: to-rem(-60);
+}

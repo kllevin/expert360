@@ -1,0 +1,33 @@
+/* ============================================================================
+   @LAYOUT -> GRID
+   ========================================================================= */
+
+
+/**
+ * Master grid that constructs the main layout of the site.
+ */
+
+
+/**
+ * Fixed width grid cell.
+ */
+
+.l-grid-master-fixed-width {
+
+  @include respond-to(lap-large) {
+    float: left;
+    width: $fixed-left-side-width;
+  }
+}
+
+
+/**
+ * Fluid width grid cell.
+ */
+
+.l-grid-master-fluid {
+
+  @include respond-to(lap-large) {
+    margin-left: $fixed-left-side-width;
+  }
+}

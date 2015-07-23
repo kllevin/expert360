@@ -1,0 +1,18 @@
+/* ============================================================================
+   @COMPONENTS -> SITE FOOTER
+   ========================================================================= */
+
+
+/**
+ * The site footer
+ */
+
+
+.c-site-footer {
+  position: absolute;
+  bottom: $spacing-base * 1px;
+  left: 0;
+  padding-left: to-rem($spacing-base);
+  padding-right: to-rem($spacing-base);
+  width: $fixed-left-side-width;
+}

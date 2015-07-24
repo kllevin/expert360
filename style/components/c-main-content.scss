@@ -12,5 +12,9 @@
   background-color: $color-off-white;
   padding-left: to-rem($spacing-half);
   padding-right: to-rem($spacing-base);
-  //margin-top: to-rem(-60);
+
+  @include respond-to(palm) {
+    background-color: transparent;
+    margin-top: to-rem(-60);
+  }
 }

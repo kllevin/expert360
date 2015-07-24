@@ -11,6 +11,7 @@
 .c-site-footer {
   padding-left: to-rem($spacing-base);
   padding-right: to-rem($spacing-base);
+  color: #72899e;
 
   @include respond-to(lap-large) {
     position: absolute;
@@ -20,3 +21,10 @@
   }
 }
 
+.c-site-footer__section-header {
+  font-size: to-rem(15);
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+}

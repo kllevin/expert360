@@ -5058,9 +5058,26 @@ html {
 /**
  * Heading styles per brand guidelines.
  */
+h1 {
+  text-shadow: 0.13333rem 0.13333rem 0 rgba(0, 0, 0, 0.3);
+  font-weight: 200;
+  line-height: 1.2;
+  color: #fff;
+}
+
 h2, .h2 {
   font-weight: 300;
   line-height: 1.4;
+}
+
+/* ============================================================================
+   @CORE -> BASE -> LINKS
+   ========================================================================= */
+/**
+ * Extending base link styles provided by scally.
+ */
+a {
+  font-weight: 600;
 }
 
 /**
@@ -5153,6 +5170,7 @@ h2, .h2 {
 .c-site-footer {
   padding-left: 1.6rem;
   padding-right: 1.6rem;
+  color: #72899e;
 }
 @media (min-width: 56.3125em) {
   .c-site-footer {
@@ -5161,6 +5179,13 @@ h2, .h2 {
     left: 0;
     width: 260px;
   }
+}
+
+.c-site-footer__section-header {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 /* ============================================================================
@@ -5307,10 +5332,6 @@ h2, .h2 {
   border-color: #e8eaeb;
 }
 
-.c-box__title {
-  color: #f16439;
-}
-
 /* ============================================================================
    @COMPONENTS -> STYLEGUIDE
    ========================================================================= */
@@ -5327,4 +5348,11 @@ h2, .h2 {
 .sg-section__title {
   color: #000;
   border-bottom: 1px solid #000;
+}
+
+/**
+ * Temporary.
+ */
+.c-box__title {
+  color: #f16439;
 }

@@ -1,0 +1,91 @@
+/* ============================================================================
+   @COMPONENTS -> COMPLETION INDICATOR
+   ========================================================================= */
+
+
+/**
+ * A component that shows how much—out of 100%— something has been completed
+ * e.g. a users Profile. It is in the form of a ring where the rings border
+ * fill colour is as complete as the % completion amount, vertically and
+ * horizontally centered within the ring is the % completion amount in text.
+ */
+
+
+/**
+ * The ring.
+ */
+
+.c-completion-indicator {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 2px solid $color-brand;
+
+
+  /**
+   * This covers the part of the visual % indicator that protrudes into the
+   * inner ring.
+   */
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    background-color: $color-shark-2;
+  }
+}
+
+/**
+ * These are the visual % indicators showing how much of the ring has been
+ * completed, the breakdown is quarters so: 25%, 50%, 75%.
+ */
+
+// 25%
+.c-completion-indicator__pc-marker {
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  left: 2px;
+  transform: rotate(45deg);
+  border: 28px solid transparent;
+  border-top-color: $color-bermuda-grey;
+}
+
+// 50%
+.c-completion-indicator__pc-marker + .c-completion-indicator__pc-marker {
+  transform: rotate(135deg);
+  top: 0;
+}
+
+// 75%
+.c-completion-indicator__pc-marker + .c-completion-indicator__pc-marker  + .c-completion-indicator__pc-marker {
+  border-top-color: transparent;
+  border-bottom-color: $color-bermuda-grey;
+  left: -2px;
+  top: 2px;
+}
+
+
+
+/**
+ * The % completion amount in plain text.
+ */
+
+.c-completion-indicator__amount {
+  font-style: normal;
+  color: $color-brand;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

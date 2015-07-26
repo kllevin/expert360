@@ -5185,6 +5185,7 @@ a {
  * The `aside` component to the main content area.
  */
 .c-aside {
+  color: #72899e;
   padding: 1.6rem;
   padding-left: 0.8rem;
   padding-right: 0.8rem; }
@@ -5196,6 +5197,13 @@ a {
     .c-aside {
       padding-top: 2.4rem;
       padding-bottom: 2.4rem; } }
+
+/**
+ * Certain text needs to be small and reduced line height i.e. 'compact'.
+ */
+.c-aside__compact-text {
+  font-size: 0.8rem;
+  line-height: 1.45; }
 
 /* ============================================================================
    @COMPONENTS -> MAIN CONTENT
@@ -5239,10 +5247,87 @@ a {
  * The banner image for the main content area.
  */
 .c-banner {
-  background: url("https://expert360.com/images/companyProducts/home/hero_home.jpg?34ae2a2e") no-repeat 0 0;
+  background: url("../images/banner-profile.jpg") no-repeat 0 0;
   background-size: cover;
   min-height: 17.33333rem;
   padding: 1.6rem; }
+
+/* ============================================================================
+   @COMPONENTS -> COMPLETION INDICATOR
+   ========================================================================= */
+/**
+ * A component that shows how much—out of 100%— something has been completed
+ * e.g. a users Profile. It is in the form of a ring where the rings border
+ * fill colour is as complete as the % completion amount, vertically and
+ * horizontally centered within the ring is the % completion amount in text.
+ */
+/**
+ * The ring.
+ */
+.c-completion-indicator {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 2px solid #f16439;
+  /**
+   * This covers the part of the visual % indicator that protrudes into the
+   * inner ring.
+   */ }
+  .c-completion-indicator:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    background-color: #21282e; }
+
+/**
+ * These are the visual % indicators showing how much of the ring has been
+ * completed, the breakdown is quarters so: 25%, 50%, 75%.
+ */
+.c-completion-indicator__pc-marker {
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  left: 2px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border: 28px solid transparent;
+  border-top-color: #72899e; }
+
+.c-completion-indicator__pc-marker + .c-completion-indicator__pc-marker {
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+  top: 0; }
+
+.c-completion-indicator__pc-marker + .c-completion-indicator__pc-marker + .c-completion-indicator__pc-marker {
+  border-top-color: transparent;
+  border-bottom-color: #72899e;
+  left: -2px;
+  top: 2px; }
+
+/**
+ * The % completion amount in plain text.
+ */
+.c-completion-indicator__amount {
+  font-style: normal;
+  color: #f16439;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
 
 /* ============================================================================
    @COMPONENTS -> ICON
@@ -5361,7 +5446,8 @@ a {
    @COMPONENTS -> PROFILE CARD
    ========================================================================= */
 /**
- * .
+ * Profile card is a component adding cosmetics and positioning to basic user
+ * profile information e.g. avatar, name, title, etc.
  */
 /**
  * Settings
@@ -5374,31 +5460,45 @@ a {
   display: inline-block;
   color: #fff; }
 
+/**
+ * Title treatment (name).
+ */
 .c-profile-card__title {
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
   font-size: 3.33333rem;
   font-weight: 200;
   line-height: 1.2;
   color: #fff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
   margin-bottom: 0; }
 
+/**
+ * Subtitle treatment (job title).
+ */
 .c-profile-card__sub-title {
   color: #fff;
   margin-bottom: 0; }
 
+/**
+ * Additional Description: location.
+ */
 .c-profile-card__description__location {
   display: block;
   font-style: italic; }
 
+/**
+ * Social share extended from base social share component.
+ */
 .c-profile-card__social-share {
-  position: absolute;
-  bottom: 0;
-  right: 0;
   /**
    * Extend `.c-social-share` in Components -> `.c-profile-card`.
    */ }
   .c-profile-card__social-share .c-social-share {
     display: inline-block; }
+  @media (min-width: 40.0625em) {
+    .c-profile-card__social-share {
+      position: absolute;
+      bottom: 0;
+      right: 0; } }
 
 /* ============================================================================
    @COMPONENTS -> SOCIAL SHARE

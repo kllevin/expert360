@@ -4,7 +4,8 @@
 
 
 /**
- * .
+ * Profile card is a component adding cosmetics and positioning to basic user
+ * profile information e.g. avatar, name, title, etc.
  */
 
 
@@ -18,37 +19,52 @@ $c-profile-card-title-font-size: 50;
 /**
  * Profile Card.
  */
+
 .c-profile-card {
   position: relative;
   display: inline-block;
   color: $color-white;
 }
 
+
+/**
+ * Title treatment (name).
+ */
+
 .c-profile-card__title {
-  text-shadow: 2px 2px 0 rgba($color-black, 0.3);
   font-size: to-rem($c-profile-card-title-font-size);
   font-weight: $font-weight-extra-light;
   line-height: 1.2;
   color: $color-white;
-
+  text-shadow: 2px 2px 0 rgba($color-black, 0.3);
   margin-bottom: 0;
 }
 
+
+/**
+ * Subtitle treatment (job title).
+ */
 .c-profile-card__sub-title {
   color: $color-white;
   margin-bottom: 0;
 }
+
+
+/**
+ * Additional Description: location.
+ */
 
 .c-profile-card__description__location {
   display: block;
   font-style: italic;
 }
 
-.c-profile-card__social-share {
-  position: absolute;
-  bottom: 0;
-  right: 0;
 
+/**
+ * Social share extended from base social share component.
+ */
+
+.c-profile-card__social-share {
 
   /**
    * Extend `.c-social-share` in Components -> `.c-profile-card`.
@@ -56,5 +72,11 @@ $c-profile-card-title-font-size: 50;
 
   .c-social-share {
     display: inline-block;
+  }
+
+  @include respond-to(lap) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 }

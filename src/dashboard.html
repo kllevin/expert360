@@ -23,7 +23,7 @@
     <!-- Logo -->
     <div class="l-grid-master-fixed-width">
       <div class="c-site-header__logo">
-        <a href="/" rel="home" class="c-site-header__logo__link"><img src="https://expert360.com/images/logo-orange.png?fca7a7db" alt="expert360 logo" width="80" height="29"></a>
+        <a href="/" rel="home" class="c-site-header__logo__link"><img src="images/expert-logo.png" alt="expert360 logo" width="80" height="29"></a>
       </div>
     </div>
     <!-- //Logo -->
@@ -55,12 +55,21 @@
     <aside class="c-aside" role="complementary">
 
       <!-- Profile Status -->
-      <div class="l-side-by-side-alt">
+      <div class="l-side-by-side-alt l-side-by-side-alt--gutter-small u-s-mb-small">
         <div class="l-side-by-side-alt__left">
-          <em style="color: rgba(255, 255, 255, 0.7); font-size: 13px;">80%</em>
+          <div class="c-completion-indicator">
+            <span class="u-hide-visually">Your profile is</span>
+            <em class="c-completion-indicator__amount">80<sup>%</sup></em>
+            <span class="u-hide-visually">complete</span>
+
+            <!-- BACKEND DEV: a span with a class of `c-completion-indicator__pc-marker needs to be injected for each increment of completion -->
+            <span class="c-completion-indicator__pc-marker"></span>
+            <!-- <span class="c-completion-indicator__pc-marker"></span>
+            <span class="c-completion-indicator__pc-marker"></span> -->
+          </div>
         </div>
         <div class="l-side-by-side-alt__right">
-          <p style="color: rgba(255, 255, 255, 0.7); font-size: 13px;">You must complete your profile before you can start working. Please <a href="#">see our checklist here</a></p>
+          <p class="c-aside__compact-text">You must complete your profile before you can start working. Please <a href="#">see our checklist here</a></p>
         </div>
       </div>
       <!-- //Profile Status -->
@@ -68,8 +77,13 @@
       <!-- Section Nav -->
       <nav role="navigation">
         <ul class="c-section-nav">
-          <li class="c-section-nav__primary-item"><a class="c-section-nav__primary-item__link" href="">Dashboard</a></li>
-          <li class="c-section-nav__primary-item"><a href="" class="c-section-nav__primary-item__link is-active">Profile</a></li>
+          <li class="c-section-nav__primary-item">
+            <a class="c-section-nav__primary-item__link" href="">Dashboard</a>
+          </li>
+          <li class="c-section-nav__primary-item">
+            <!-- BACKEND DEV: append `is-active` class to active links -->
+            <a href="" class="c-section-nav__primary-item__link is-active">Profile</a>
+          </li>
           <li class="c-section-nav__primary-item">
             <details class="c-section-nav__primary-item-with-children">
               <summary class="c-section-nav__primary-item__link">
@@ -150,9 +164,9 @@
 
       <!-- Profile Card -->
       <div class="c-profile-card">
-          <div class="l-side-by-side">
+          <div class="l-side-by-side-from-lap">
             <div class="l-side-by-side__left">
-              <img class="c-avatar" src="https://expert360.com/images/team/jsok.jpg?36690e7e" alt="example avatar">
+              <img class="c-avatar" src="images/avatar.jpg" alt="photo of [dynamically add name]">
             </div>
 
             <div class="l-side-by-side__right">
@@ -167,23 +181,23 @@
 
           <!-- Social Share -->
           <div class="c-profile-card__social-share">
-            <span>Share Profile: </span>
-            <ul class="c-social-share o-list-inline">
+            <span class="u-s-pr-tiny">Share Profile: </span>
+            <ul class="c-social-share o-list-inline o-list-inline--spacing-tiny">
               <li>
                 <a href="#">
                   <svg class="c-icon c-icon--facebook">
                     <use xlink:href="#icon-facebook">
                   </svg>
                 </a>
-              </li>
-              <li>
+              </li><!--
+              --><li>
                 <a href="#">
                   <svg class="c-icon c-icon--twitter">
                     <use xlink:href="#icon-twitter">
                   </svg>
                 </a>
-              </li>
-              <li>
+              </li><!--
+              --><li>
                 <a href="#">
                   <svg class="c-icon c-icon--linkedin">
                     <use xlink:href="#icon-linkedin">
@@ -332,9 +346,9 @@
               </div>
             </div>
             <ul>
-              <li class="c-box c-box--alt c-box--small u-s-mb-small">Finance</li>
-              <li class="c-box c-box--alt c-box--small u-s-mb-small">Automotive</li>
-              <li class="c-box c-box--alt c-box--small u-s-mb-small">Hospitality and Tourism</li>
+              <li class="c-box c-box--alt u-s-p-small u-s-mb-small">Finance</li>
+              <li class="c-box c-box--alt u-s-p-small u-s-mb-small">Automotive</li>
+              <li class="c-box c-box--alt u-s-p-small u-s-mb-small">Hospitality and Tourism</li>
             </ul>
             <!-- //Section Header -->
 

@@ -155,13 +155,9 @@ module.exports = function(grunt) {
     'autoprefixer',
     'cssmin',
     'svg',
+    'imagemin',
     'htmlmin'
   ]);
 
-  // SERVE
-  grunt.registerTask('serve', [
-    'sass:dev'
-  ]);
-
-  grunt.registerTask('default', ['serve']);
+  grunt.registerTask('default', ['build']);
 };

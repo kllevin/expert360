@@ -9,17 +9,28 @@
 
 
 .c-aside {
+  color: $color-bermuda-grey;
   padding: to-rem($spacing-base);
-  padding-left: to-rem($gutter);
-  padding-right: to-rem($gutter);
+  padding-left: to-rem($spacing-half);
+  padding-right: to-rem($spacing-half);
 
   @include respond-to($palm-small) {
-    padding-left: to-rem($gutter-large);
-    padding-right: to-rem($gutter-large);
+    padding-left: to-rem($spacing-base);
+    padding-right: to-rem($spacing-base);
   }
 
   @include respond-to(lap-large) {
     padding-top: to-rem($spacing-base-plus-half);
     padding-bottom: to-rem($spacing-base-plus-half);
   }
+}
+
+
+/**
+ * Certain text needs to be small and reduced line height i.e. 'compact'.
+ */
+
+.c-aside__compact-text {
+  font-size: to-rem($font-size-xx-small);
+  line-height: 1.45;
 }

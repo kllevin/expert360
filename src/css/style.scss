@@ -183,6 +183,7 @@ $l-container-maximum-width: 1200;
 @import "../../node_modules/scally/layout/l-grid";
 
 // Side by side
+
 @import "../../node_modules/scally/layout/l-side-by-side";
 
 @import "../../node_modules/scally/layout/l-side-by-side-alt";
@@ -271,6 +272,8 @@ $border-radius: 4px;
 @import "components/c-main-content";
 
 @import "components/c-banner";
+
+@import "components/c-completion-indicator";
 
 @import "components/c-icon";
 

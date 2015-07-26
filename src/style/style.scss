@@ -16,31 +16,42 @@
  */
 
 // Colours
-$color-off-white:         #eff2f3;
+// Colour variable names taken from: http://chir.ag/projects/name-that-color
 
-$color-navy-blue-dark:    #1b2127;
+$color-shark:                   #1b2127;
 
-$color-navy-blue-light:   #21282e;
+$color-shark-2:                 #21282e;
 
-$color-bermuda-grey:      #72899e;
+$color-bermuda-grey:            #72899e;
 
-$color-limed-spruce:      #3e4a56;
+$color-limed-spruce:            #3e4a56;
 
-$color-oxford-blue:       #2c3944;
+$color-oxford-blue:             #2c3944;
 
-$color-geyser:            #dbe5e7;
+$color-geyser:                  #dbe5e7;
 
-$color-porcelain:         #e8edef;
+$color-porcelain:               #e8edef;
 
-$color-shuttle-grey:      #5c6f7f;
+$color-porcelain-2:             #eff2f3;
 
-
-
+$color-shuttle-grey:            #5c6f7f;
 
 // Fixed left side width
-$fixed-left-side-width:   260px;
+$fixed-left-side-width:         260px;
 
+// Custom breakpoints
+$palm-small:                    420;
 
+$main-content-becomes-2-cols:   1180;
+
+// Typography
+$font-weight-normal:            400;
+
+$font-weight-extra-light:       200;
+
+$font-weight-light:             300;
+
+$font-weight-bold:              600;
 
 
 /* Scally framework
@@ -66,7 +77,7 @@ $fixed-left-side-width:   260px;
 // Settings
 
 $font-size:             15;
-$font-family-base:      "Open Sans", sans-serif;
+$font-family-base:      "Open Sans", Verdana, Helvetica, sans-serif;
 $font-size-heading-1:   64;
 $font-size-heading-2:   24;
 $font-size-heading-3:   20;
@@ -78,12 +89,13 @@ $font-size-heading-5:   15;
 
 @import "../../node_modules/scally/core/settings/retina-resolution";
 
+$default-breakpoints: (lap, 1180);
 @import "../../node_modules/scally/core/settings/breakpoints";
 
 @import "../../node_modules/scally/core/settings/widths";
 
-$color-brand:  #f16439;
-$color-text-base: #21282e;
+$color-brand:       #f16439;
+$color-text-base:   #21282e;
 @import "../../node_modules/scally/core/settings/colours";
 
 @import "../../node_modules/scally/core/settings/positioning";
@@ -130,7 +142,7 @@ $color-text-base: #21282e;
 
 // Base
 
-$html-element-background-color:  $color-off-white;
+$html-element-background-color:  $color-shark;
 @import "../../node_modules/scally/core/base/root";
 
 @import "../../node_modules/scally/core/base/abbreviation";
@@ -163,8 +175,7 @@ $apply-details-marker: true;
  */
 
 // Main container
-$l-container-width: 100%;
-$l-container-minimum-width: 220;
+$l-container-width:         100%;
 $l-container-maximum-width: 1200;
 @import "../../node_modules/scally/layout/l-container";
 
@@ -212,6 +223,21 @@ $l-container-maximum-width: 1200;
    ========================================================================= */
 
 /**
+ * Settings.
+ *
+ * N.B. These are declared here because I need access to the Scally variables.
+ */
+
+// Gutters
+$gutter:                        $spacing-half;
+
+$gutter-large:                  $spacing-base;
+
+// Border radius
+$border-radius: 4px;
+
+
+/**
  * CORE.
  */
 
@@ -246,7 +272,7 @@ $l-container-maximum-width: 1200;
 
 @import "components/c-icon";
 
-@import "components/c-navigation";
+@import "components/c-section-nav";
 
 @import "components/c-avatar";
 
@@ -258,4 +284,5 @@ $l-container-maximum-width: 1200;
 
 @import "components/c-employment-list";
 
+// This should never make it to the compiled css for production
 @import "components/c-styleguide";

@@ -1446,9 +1446,9 @@ ins {
 html {
   font-size: 0.9375em;
   line-height: 1.6;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", Verdana, Helvetica, sans-serif;
   color: #21282e;
-  background: #eff2f3; }
+  background: #1b2127; }
 
 /* ============================================================================
    @CORE -> BASE -> ABBREVIATION
@@ -1642,7 +1642,7 @@ summary {
  * Apply font family.
  */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", Verdana, Helvetica, sans-serif; }
 
 /**
  * Set margins but make optional.
@@ -2607,6 +2607,7 @@ h6:last-child,
 /**
  * Apply at these breakpoints.
  */
+.l-grid-master-fluid:after,
 .u-clear-fix:after {
   content: "" !important;
   display: table !important;
@@ -4571,8 +4572,214 @@ h6:last-child,
 
   .u-eleven-twelfths-from-lap {
     width: 91.66667%; } }
+@media (min-width: 73.75em) {
+  .u-one-whole-from-1180 {
+    width: 100%; }
+
+  .u-one-half-from-1180 {
+    width: 50%; }
+
+  .u-one-third-from-1180 {
+    width: 33.33333%; }
+
+  .u-two-thirds-from-1180 {
+    width: 66.66667%; }
+
+  .u-one-quarter-from-1180 {
+    width: 25%; }
+
+  .u-two-quarters-from-1180 {
+    width: 50%; }
+
+  .u-three-quarters-from-1180 {
+    width: 75%; }
+
+  .u-one-fifth-from-1180 {
+    width: 20%; }
+
+  .u-two-fifths-from-1180 {
+    width: 40%; }
+
+  .u-three-fifths-from-1180 {
+    width: 60%; }
+
+  .u-four-fifths-from-1180 {
+    width: 80%; }
+
+  .u-one-sixth-from-1180 {
+    width: 16.66667%; }
+
+  .u-two-sixths-from-1180 {
+    width: 33.33333%; }
+
+  .u-three-sixths-from-1180 {
+    width: 50%; }
+
+  .u-four-sixths-from-1180 {
+    width: 66.66667%; }
+
+  .u-five-sixths-from-1180 {
+    width: 83.33333%; }
+
+  .u-one-seventh-from-1180 {
+    width: 14.28571%; }
+
+  .u-two-sevenths-from-1180 {
+    width: 28.57143%; }
+
+  .u-three-sevenths-from-1180 {
+    width: 42.85714%; }
+
+  .u-four-sevenths-from-1180 {
+    width: 57.14286%; }
+
+  .u-five-sevenths-from-1180 {
+    width: 71.42857%; }
+
+  .u-six-sevenths-from-1180 {
+    width: 85.71429%; }
+
+  .u-one-eighth-from-1180 {
+    width: 12.5%; }
+
+  .u-two-eighths-from-1180 {
+    width: 25%; }
+
+  .u-three-eighths-from-1180 {
+    width: 37.5%; }
+
+  .u-four-eighths-from-1180 {
+    width: 50%; }
+
+  .u-five-eighths-from-1180 {
+    width: 62.5%; }
+
+  .u-six-eighths-from-1180 {
+    width: 75%; }
+
+  .u-seven-eighths-from-1180 {
+    width: 87.5%; }
+
+  .u-one-ninth-from-1180 {
+    width: 11.11111%; }
+
+  .u-two-ninths-from-1180 {
+    width: 22.22222%; }
+
+  .u-three-ninths-from-1180 {
+    width: 33.33333%; }
+
+  .u-four-ninths-from-1180 {
+    width: 44.44444%; }
+
+  .u-five-ninths-from-1180 {
+    width: 55.55556%; }
+
+  .u-six-ninths-from-1180 {
+    width: 66.66667%; }
+
+  .u-seven-ninths-from-1180 {
+    width: 77.77778%; }
+
+  .u-eight-ninths-from-1180 {
+    width: 88.88889%; }
+
+  .u-one-tenth-from-1180 {
+    width: 10%; }
+
+  .u-two-tenths-from-1180 {
+    width: 20%; }
+
+  .u-three-tenths-from-1180 {
+    width: 30%; }
+
+  .u-four-tenths-from-1180 {
+    width: 40%; }
+
+  .u-five-tenths-from-1180 {
+    width: 50%; }
+
+  .u-six-tenths-from-1180 {
+    width: 60%; }
+
+  .u-seven-tenths-from-1180 {
+    width: 70%; }
+
+  .u-eight-tenths-from-1180 {
+    width: 80%; }
+
+  .u-nine-tenths-from-1180 {
+    width: 90%; }
+
+  .u-one-eleventh-from-1180 {
+    width: 9.09091%; }
+
+  .u-two-elevenths-from-1180 {
+    width: 18.18182%; }
+
+  .u-three-elevenths-from-1180 {
+    width: 27.27273%; }
+
+  .u-four-elevenths-from-1180 {
+    width: 36.36364%; }
+
+  .u-five-elevenths-from-1180 {
+    width: 45.45455%; }
+
+  .u-six-elevenths-from-1180 {
+    width: 54.54545%; }
+
+  .u-seven-elevenths-from-1180 {
+    width: 63.63636%; }
+
+  .u-eight-elevenths-from-1180 {
+    width: 72.72727%; }
+
+  .u-nine-elevenths-from-1180 {
+    width: 81.81818%; }
+
+  .u-ten-elevenths-from-1180 {
+    width: 90.90909%; }
+
+  .u-one-twelfth-from-1180 {
+    width: 8.33333%; }
+
+  .u-two-twelfths-from-1180 {
+    width: 16.66667%; }
+
+  .u-three-twelfths-from-1180 {
+    width: 25%; }
+
+  .u-four-twelfths-from-1180 {
+    width: 33.33333%; }
+
+  .u-five-twelfths-from-1180 {
+    width: 41.66667%; }
+
+  .u-six-twelfths-from-1180 {
+    width: 50%; }
+
+  .u-seven-twelfths-from-1180 {
+    width: 58.33333%; }
+
+  .u-eight-twelfths-from-1180 {
+    width: 66.66667%; }
+
+  .u-nine-twelfths-from-1180 {
+    width: 75%; }
+
+  .u-ten-twelfths-from-1180 {
+    width: 83.33333%; }
+
+  .u-eleven-twelfths-from-1180 {
+    width: 91.66667%; } }
 /* Expert360 Styles
    ========================================================================= */
+/**
+ * Settings.
+ *
+ * N.B. These are declared here because I need access to the Scally variables.
+ */
 /**
  * CORE.
  */
@@ -4580,17 +4787,27 @@ h6:last-child,
    @CORE -> BASE -> ROOT
    ========================================================================= */
 /**
- * The root element: `html`, we apply a CSS gradient to create the illusion
- * of 2 columns.
+ * The root element: `html`.
  */
 html {
-  background-color: #21282e;
-  padding-bottom: 3.2rem; }
+  font-weight: 400; }
   @media (min-width: 56.3125em) {
     html {
       background-color: #eff2f3;
-      background: -webkit-linear-gradient(left, #21282e 0%, #21282e 260px, #eff2f3 260px, #eff2f3 100%);
-      background: linear-gradient(to right, #21282e 0%, #21282e 260px, #eff2f3 260px, #eff2f3 100%); } }
+      position: relative;
+      /**
+       * Used to give the illusion that the left column is the height of the
+       * content.
+       */ }
+      html:after {
+        content: "";
+        background-color: #21282e;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 260px;
+        z-index: -1; } }
 
 /* ============================================================================
    @CORE -> BASE -> HEADINGS
@@ -4671,17 +4888,19 @@ a {
  * The site header.
  */
 .c-site-header {
-  background-color: #1b2127; }
-  @media (min-width: 56.3125em) {
-    .c-site-header {
-      background: -webkit-linear-gradient(left, #1b2127 0%, #1b2127 260px, #fff 260px, #fff 100%);
-      background: linear-gradient(to right, #1b2127 0%, #1b2127 260px, #fff 260px, #fff 100%); } }
+  background-color: #fff; }
 
 /**
  * Logo.
  */
 .c-site-header__logo {
-  padding-left: 1.6rem; }
+  background-color: #1b2127;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem; }
+  @media (min-width: 26.25em) {
+    .c-site-header__logo {
+      padding-left: 1.6rem;
+      padding-right: 1.6rem; } }
 
 /**
  * Logo link.
@@ -4695,9 +4914,12 @@ a {
  * Nav.
  */
 .c-site-header__nav {
-  background-color: #fff;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem; }
+  padding-left: 0.8rem;
+  padding-right: 0.8rem; }
+  @media (min-width: 26.25em) {
+    .c-site-header__nav {
+      padding-left: 1.6rem;
+      padding-right: 1.6rem; } }
 
 /**
  * Nav links.
@@ -4705,30 +4927,56 @@ a {
 .c-site-header__nav__links {
   display: inline-block;
   padding-top: 0.8rem;
-  padding-bottom: 0.8rem; }
+  padding-bottom: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase; }
+  .c-site-header__nav__links, .c-site-header__nav__links:hover, .c-site-header__nav__links:focus {
+    color: #72899e; }
+
+/**
+ * Used for hiding text within the palm viewport range.
+ */
+.c-site-header__nav__links__hide-at-palm {
+  display: none; }
+  @media (min-width: 40em) {
+    .c-site-header__nav__links__hide-at-palm {
+      display: inline; } }
 
 /* ============================================================================
    @COMPONENTS -> SITE FOOTER
    ========================================================================= */
 /**
- * The site footer
+ * The site footer.
  */
 .c-site-footer {
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
-  color: #72899e; }
+  padding: 1.6rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  color: #72899e;
+  /**
+   * When the layout becomes 2 columns position the footer in the bottom left
+   * corner, the positioning is relative to the `html` element.
+   */ }
+  @media (min-width: 26.25em) {
+    .c-site-footer {
+      padding-left: 1.6rem;
+      padding-right: 1.6rem; } }
   @media (min-width: 56.3125em) {
     .c-site-footer {
       position: absolute;
       bottom: 24px;
       left: 0;
-      width: 260px; } }
+      width: 260px;
+      padding-top: 0;
+      padding-bottom: 0; } }
 
-.c-site-footer__section-header {
-  font-size: 1rem;
+/**
+ * Heading.
+ */
+.c-site-footer__heading {
   font-weight: 600;
-  line-height: 1.4;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-bottom: 0.4rem; }
 
 /* ============================================================================
    @COMPONENTS -> ASIDE
@@ -4737,9 +4985,17 @@ a {
  * The `aside` component to the main content area.
  */
 .c-aside {
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
-  padding-top: 2.4rem; }
+  padding: 1.6rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem; }
+  @media (min-width: 26.25em) {
+    .c-aside {
+      padding-left: 1.6rem;
+      padding-right: 1.6rem; } }
+  @media (min-width: 56.3125em) {
+    .c-aside {
+      padding-top: 2.4rem;
+      padding-bottom: 2.4rem; } }
 
 /* ============================================================================
    @COMPONENTS -> MAIN CONTENT
@@ -4747,14 +5003,34 @@ a {
 /**
  * The main content area.
  */
+/**
+ * Settings.
+ */
 .c-main-content {
   background-color: #eff2f3;
   padding-left: 0.8rem;
-  padding-right: 1.6rem; }
-  @media (min-width: 40em) {
+  padding-right: 0.8rem;
+  padding-bottom: 1.6rem; }
+  @media (min-width: 26.25em) {
     .c-main-content {
-      background-color: transparent;
-      margin-top: -4rem; } }
+      padding-left: 1.6rem;
+      padding-right: 1.6rem; } }
+
+/**
+ * Main two containers for the main content area need to offset so that they
+ * can overlap the Banner component, on mobile and tablet only the first
+ * container needs this treatment as it is not a 2 column layout at that size.
+ * The first container also needs a margin bottom so that it doesn't butt up
+ * against the second column when it is a linear layout.
+ */
+.c-main-content__first {
+  margin-top: -3.33333rem;
+  margin-bottom: 0.8rem; }
+
+@media (min-width: 73.75em) {
+  .c-main-content__second {
+    margin-top: -3.33333rem;
+    margin-bottom: 0; } }
 
 /* ============================================================================
    @COMPONENTS -> BANNER
@@ -4775,89 +5051,95 @@ a {
  */
 .c-icon {
   display: inline-block;
-  height: 1.06667rem;
-  width: 1.06667rem; }
+  height: 16px;
+  width: 16px; }
 
 /**
- * Icons.
+ * Modifier: icon pencil.
  */
 .c-icon--pencil {
   fill: #dbe5e7; }
 
 /* ============================================================================
-   @COMPONENTS -> NAVIGATION
+   @COMPONENTS -> SECTION NAVIGATION
    ========================================================================= */
 /**
- * Section Navigation.
+ * Section navigation. Each subsection of top level navigation is collapsible
+ * via a `details` element.
  */
-.c-nav {
+/**
+ * Settings.
+ */
+/**
+ * Section navigation.
+ */
+.c-section-nav {
   font-size: 0.93333rem;
   font-weight: 300; }
 
 /**
- * Top Level.
+ * Top level items.
  */
-.c-nav__primary-item {
+.c-section-nav__primary-item {
   border-bottom: 1px solid #2c3944; }
 
 /**
- * Links.
+ * Top level links.
  */
-.c-nav__primary-item__link {
+.c-section-nav__primary-item__link {
   display: block;
-  color: #72899e;
   padding: 0.8rem 0;
+  color: #72899e;
   text-transform: uppercase;
   /**
-   * Extend `.c-icon` in Components -> `.c-nav`.
+   * Extend `.c-icon` in Components -> `.c-section-nav`.
    */ }
-  .c-nav__primary-item__link:hover, .c-nav__primary-item__link:focus, .c-nav__primary-item__link.is-active {
+  .c-section-nav__primary-item__link:hover, .c-section-nav__primary-item__link:focus, .c-section-nav__primary-item__link.is-active {
     color: #fff;
     text-decoration: none; }
-  .c-nav__primary-item__link .c-icon {
+  .c-section-nav__primary-item__link .c-icon {
     fill: currentColor; }
 
 /**
- * Control the open and close state of primary nav items.
- *
+ * Control the open and close state of section nav items.
  * This is specifically needed for `details` element.
  *
  * N.B. a polyfill is needed for cross browser compatibility with the `open`
  * attribute.
  */
-.c-nav__primary-item-with-children {
+.c-section-nav__primary-item-with-children {
   /**
-   * Extend `.c-icon` in Components -> `.c-nav`.
+   * Extend `.c-icon` in Components -> `.c-section-nav`.
    */ }
-  .c-nav__primary-item-with-children .c-icon--minus {
+  .c-section-nav__primary-item-with-children .c-icon--minus {
     display: none; }
-  .c-nav__primary-item-with-children[open] .c-icon--minus {
+  .c-section-nav__primary-item-with-children[open] .c-icon--minus {
     display: inline-block; }
-  .c-nav__primary-item-with-children[open] .c-icon--plus {
+  .c-section-nav__primary-item-with-children[open] .c-icon--plus {
     display: none; }
 
 /**
- * Second Level.
+ * Second level items.
  */
-.c-nav__secondary-item {
+.c-section-nav__secondary-item {
   margin-bottom: 0.8rem; }
 
 /**
  * Modifier: disabled
  */
-.c-nav__secondary-item--disabled {
+.c-section-nav__secondary-item--disabled {
   color: #3e4a56;
   font-style: italic;
   text-transform: capitalize; }
 
 /**
- * Links.
+ * Second level links.
  */
-.c-nav__secondary-item__link {
+.c-section-nav__secondary-item__link {
   display: block;
   text-transform: capitalize;
   color: #72899e; }
-  .c-nav__secondary-item__link:hover, .c-nav__secondary-item__link:active, .c-nav__secondary-item__link.is-active {
+  .c-section-nav__secondary-item__link:hover, .c-section-nav__secondary-item__link:focus, .c-section-nav__secondary-item__link.is-active {
     color: #fff;
     text-decoration: none; }
 
@@ -4868,11 +5150,11 @@ a {
  * Avatar component.
  */
 .c-avatar {
-  background: #fff;
+  background-color: #fff;
   border: 3px solid #fff;
   border-radius: 50%;
-  width: 6.66667rem;
-  box-shadow: 0 0.13333rem 0.13333rem -0.13333rem rgba(0, 0, 0, 0.13); }
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.13);
+  width: 100px; }
 
 /* ============================================================================
    @COMPONENTS -> PROFILE CARD
@@ -4884,7 +5166,7 @@ a {
   background: pink; }
 
 .c-profile-card__title {
-  text-shadow: 0.13333rem 0.13333rem 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
   font-size: 3.33333rem;
   font-weight: 200;
   line-height: 1.2;
@@ -4895,34 +5177,34 @@ a {
    @COMPONENTS -> BOX
    ========================================================================= */
 /**
- * Box component typically used to section content.
+ * Box component adds simple cosmetics to a block level element.
  */
 .c-box,
 .c-button-add {
   padding: 1.6rem;
-  border-radius: 0.26667rem;
+  background-color: #e8edef;
   border: 1px solid #dbe5e7;
-  background-color: #e8edef; }
+  border-radius: 4px; }
 
 /**
- * Modifer: alternate.
+ * Modifier: alternate.
  */
 .c-box--alt {
-  box-shadow: 0 0.13333rem 0.13333rem -0.13333rem rgba(0, 0, 0, 0.13);
   background-color: #fff;
-  border-color: #e8edef; }
+  border-color: #e8edef;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.13); }
 
 /* ============================================================================
    @COMPONENTS -> BUTTON ADD
    ========================================================================= */
 /**
- * Editable button component.
+ * Button that indicates content can be added.
  */
 .c-button-add {
   display: block;
   width: 100%;
   text-align: left;
-  font-size: 1.33333rem;
+  font-size: 20;
   font-weight: 200;
   color: #5c6f7f;
   /**
@@ -4935,7 +5217,7 @@ a {
    @COMPONENTS -> EMPLOYMENT LIST
    ========================================================================= */
 /**
- * Employment List.
+ * Employment list component adds cosmetics to employment list and specific employment details data.
  */
 .c-employment-list > li {
   border-bottom: 1px solid #dbe5e7;
@@ -4947,6 +5229,12 @@ a {
     margin-bottom: 0; }
 
 /**
+ * Employer details.
+ */
+.c-employment-list__employer-details {
+  margin-bottom: 1.6rem; }
+
+/**
  * Employment title.
  */
 .c-employment-list__title {
@@ -4955,13 +5243,13 @@ a {
 /**
  * Employer.
  */
-.c-employment-list__employer {
-  margin-bottom: 0; }
+.c-employment-list__employer-details__employer {
+  display: block; }
 
 /**
  * Duration of employment.
  */
-.c-employment-list__duration {
+.c-employment-list__employer-details__duration {
   font-style: italic; }
 
 /* ============================================================================

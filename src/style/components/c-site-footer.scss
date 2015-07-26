@@ -4,27 +4,43 @@
 
 
 /**
- * The site footer
+ * The site footer.
  */
 
 
 .c-site-footer {
-  padding-left: to-rem($spacing-base);
-  padding-right: to-rem($spacing-base);
-  color: #72899e;
+  padding: to-rem($spacing-base);
+  padding-left: to-rem($gutter);
+  padding-right: to-rem($gutter);
+  color: $color-bermuda-grey;
+
+  @include respond-to($palm-small) {
+    padding-left: to-rem($gutter-large);
+    padding-right: to-rem($gutter-large);
+  }
+
+  /**
+   * When the layout becomes 2 columns position the footer in the bottom left
+   * corner, the positioning is relative to the `html` element.
+   */
 
   @include respond-to(lap-large) {
     position: absolute;
     bottom: $spacing-base * 1px;
     left: 0;
     width: $fixed-left-side-width;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
-.c-site-footer__section-header {
-  font-size: to-rem(15);
-  font-weight: 600;
-  line-height: 1.4;
-  text-transform: uppercase;
 
+/**
+ * Heading.
+ */
+
+.c-site-footer__heading {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: to-rem($spacing-quarter);
 }

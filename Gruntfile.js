@@ -65,12 +65,12 @@ module.exports = function(grunt) {
     // MINIFY SVG
     svgmin: {
       options: {
-        plugins: [
-          { cleanupIDs: true },
-          { removeUselessStrokeAndFill: true },
-          { removeTitle: true },
-          { removeAttrs: true }
-        ]
+        plugins: [{
+          cleanupIDs: true,
+          removeUselessStrokeAndFill: true,
+          removeTitle: true,
+          removeAttrs: true
+        }]
       },
       dist: {
         files: [{
@@ -85,7 +85,8 @@ module.exports = function(grunt) {
     // SVG SPRITE
     svgstore: {
       options: {
-        prefix : 'icon-'
+        prefix : 'icon-',
+        includeTitleElement: false
       },
       dist : {
         files: {
@@ -131,7 +132,7 @@ module.exports = function(grunt) {
   // REGISTER TASKS
   grunt.registerTask('svg', ['svgmin', 'svgstore']);
 
-  // SERVE
+  // BUILD
   grunt.registerTask('build', [
     'sass:dist',
     'autoprefixer',
@@ -140,7 +141,7 @@ module.exports = function(grunt) {
     'htmlmin'
   ]);
 
-  // BUILD
+  // SERVE
   grunt.registerTask('serve', [
     'sass:dev'
   ]);

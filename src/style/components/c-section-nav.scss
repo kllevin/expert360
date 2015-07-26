@@ -1,0 +1,134 @@
+/* ============================================================================
+   @COMPONENTS -> SECTION NAVIGATION
+   ========================================================================= */
+
+
+/**
+ * Section navigation. Each subsection of top level navigation is collapsible
+ * via a `details` element.
+ */
+
+
+/**
+ * Settings.
+ */
+
+$c-section-nav-link-color:        $color-bermuda-grey;
+
+$c-section-nav-link-color-hover:  $color-white;
+
+
+/**
+ * Section navigation.
+ */
+
+.c-section-nav {
+  font-size: to-rem($font-size-small);
+  font-weight: $font-weight-light;
+}
+
+
+/**
+ * Top level items.
+ */
+
+.c-section-nav__primary-item {
+  border-bottom: 1px solid $color-oxford-blue;
+}
+
+
+/**
+ * Top level links.
+ */
+
+.c-section-nav__primary-item__link {
+  display: block;
+  padding: to-rem($spacing-half) 0;
+  color: $c-section-nav-link-color;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    color: $c-section-nav-link-color-hover;
+    text-decoration: none;
+  }
+
+
+  /**
+   * Extend `.c-icon` in Components -> `.c-section-nav`.
+   */
+
+  .c-icon {
+    fill: currentColor;
+  }
+}
+
+
+/**
+ * Control the open and close state of section nav items.
+ * This is specifically needed for `details` element.
+ *
+ * N.B. a polyfill is needed for cross browser compatibility with the `open`
+ * attribute.
+ */
+
+.c-section-nav__primary-item-with-children {
+
+
+  /**
+   * Extend `.c-icon` in Components -> `.c-section-nav`.
+   */
+
+  .c-icon--minus {
+    display: none;
+  }
+
+  &[open] {
+    .c-icon--minus {
+      display: inline-block;
+    }
+
+    .c-icon--plus {
+      display: none;
+    }
+  }
+}
+
+
+/**
+ * Second level items.
+ */
+
+.c-section-nav__secondary-item {
+  margin-bottom: to-rem($spacing-half);
+}
+
+
+/**
+ * Modifier: disabled
+ */
+
+.c-section-nav__secondary-item--disabled {
+  color: $color-limed-spruce;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+
+/**
+ * Second level links.
+ */
+
+.c-section-nav__secondary-item__link {
+  display: block;
+  text-transform: capitalize;
+  color: $c-section-nav-link-color;
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    color: $c-section-nav-link-color-hover;
+    text-decoration: none;
+  }
+}

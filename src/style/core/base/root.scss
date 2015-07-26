@@ -4,17 +4,33 @@
 
 
 /**
- * The root element: `html`, we apply a CSS gradient to create the illusion
- * of 2 columns.
+ * The root element: `html`.
  */
 
 
 html {
-  background-color: $color-navy-blue-light;
-  padding-bottom: to-rem($spacing-double);
-
+  font-weight: $font-weight-normal;
   @include respond-to(lap-large) {
-    background-color: $color-off-white;
-    background: linear-gradient(to right, $color-navy-blue-light 0%, $color-navy-blue-light $fixed-left-side-width, $color-off-white $fixed-left-side-width, $color-off-white 100%);
+    background-color: $color-porcelain-2;
+    // Needed so the footer is positioned relative to the `html` element
+    // rather than the viewport
+    position: relative;
+
+
+    /**
+     * Used to give the illusion that the left column is the height of the
+     * content.
+     */
+
+    &:after {
+      content: "";
+      background-color: $color-shark-2;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: $fixed-left-side-width;
+      z-index: -1;
+    }
   }
 }

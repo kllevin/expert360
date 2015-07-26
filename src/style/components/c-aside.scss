@@ -9,7 +9,17 @@
 
 
 .c-aside {
-  padding-left: to-rem($spacing-base);
-  padding-right: to-rem($spacing-base);
-  padding-top: to-rem($spacing-base-plus-half);
+  padding: to-rem($spacing-base);
+  padding-left: to-rem($gutter);
+  padding-right: to-rem($gutter);
+
+  @include respond-to($palm-small) {
+    padding-left: to-rem($gutter-large);
+    padding-right: to-rem($gutter-large);
+  }
+
+  @include respond-to(lap-large) {
+    padding-top: to-rem($spacing-base-plus-half);
+    padding-bottom: to-rem($spacing-base-plus-half);
+  }
 }

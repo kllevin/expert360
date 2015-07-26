@@ -4,25 +4,25 @@
 
 
 /**
- * Box component typically used to section content.
+ * Box component adds simple cosmetics to a block level element.
  */
 
 .c-box,
 %c-box {
    padding: to-rem($spacing-base);
-   border-radius: to-rem($border-radius);
-   border: 1px solid $color-geyser;
    background-color: $color-porcelain;
+   border: 1px solid $color-geyser;
+   border-radius: $border-radius;
 }
 
 
 /**
- * Modifer: alternate.
+ * Modifier: alternate.
  */
 
 .c-box--alt,
 %c-box--alt {
-   @include to-rem(box-shadow, (0 2 2 -2 rgba(0, 0, 0, 0.13)));
-   background-color: $color-white;
-   border-color: $color-porcelain;
+  background-color: $color-white;
+  border-color: $color-porcelain;
+  box-shadow: 0 2px 2px -2px rgba($color-black, 0.13);
 }

@@ -7,14 +7,42 @@
  * The main content area.
  */
 
+/**
+ * Settings.
+ */
+
+$c-main-content-offset: -50;
+
 
 .c-main-content {
-  background-color: $color-off-white;
-  padding-left: to-rem($spacing-half);
-  padding-right: to-rem($spacing-base);
+  background-color: $color-porcelain-2;
+  padding-left: to-rem($gutter);
+  padding-right: to-rem($gutter);
+  padding-bottom: to-rem($spacing-base);
 
-  @include respond-to(palm) {
-    background-color: transparent;
-    margin-top: to-rem(-60);
+  @include respond-to($palm-small) {
+    padding-left: to-rem($gutter-large);
+    padding-right: to-rem($gutter-large);
+  }
+}
+
+
+/**
+ * Main two containers for the main content area need to offset so that they
+ * can overlap the Banner component, on mobile and tablet only the first
+ * container needs this treatment as it is not a 2 column layout at that size.
+ * The first container also needs a margin bottom so that it doesn't butt up
+ * against the second column when it is a linear layout.
+ */
+
+.c-main-content__first {
+  margin-top: to-rem($c-main-content-offset);
+  margin-bottom: to-rem($spacing-half);
+}
+
+.c-main-content__second {
+  @include respond-to($main-content-becomes-2-cols) {
+    margin-top: to-rem($c-main-content-offset);
+    margin-bottom: 0;
   }
 }

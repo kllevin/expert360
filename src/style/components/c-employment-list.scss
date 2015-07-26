@@ -3,7 +3,7 @@
    ========================================================================= */
 
  /**
-  * Employment List.
+  * Employment list component adds cosmetics to employment list and specific employment details data.
   */
 
 .c-employment-list > li {
@@ -16,7 +16,14 @@
     padding-bottom: 0;
     margin-bottom: 0;
   }
+}
 
+/**
+ * Employer details.
+ */
+
+.c-employment-list__employer-details {
+  margin-bottom: to-rem($spacing-base);
 }
 
 
@@ -28,12 +35,13 @@
   margin-bottom: to-rem($spacing-half);
 }
 
+
 /**
  * Employer.
  */
 
-.c-employment-list__employer {
-  margin-bottom: 0;
+.c-employment-list__employer-details__employer {
+  display: block;
 }
 
 
@@ -41,6 +49,6 @@
  * Duration of employment.
  */
 
-.c-employment-list__duration {
+.c-employment-list__employer-details__duration {
   font-style: italic;
 }

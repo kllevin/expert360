@@ -2,20 +2,20 @@
    @COMPONENTS -> BUTTON ADD
    ========================================================================= */
 
+
  /**
-  * Editable button component.
+  * Button that indicates content can be added.
   */
 
 
 .c-button-add {
   @extend %o-button;
   @extend %c-box;
-
   display: block;
   width: 100%;
   text-align: left;
-  font-size: to-rem(20);
-  font-weight: 200;
+  font-size: $font-size-heading-3;
+  font-weight: $font-weight-extra-light;
   color: $color-shuttle-grey;
 
 

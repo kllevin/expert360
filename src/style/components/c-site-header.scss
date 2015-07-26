@@ -9,11 +9,9 @@
 
 
 .c-site-header {
-  background-color: $color-navy-blue-dark;
+  background-color: $color-white;
 
-  @include respond-to(lap-large) {
-    background: linear-gradient(to right, $color-navy-blue-dark 0%, $color-navy-blue-dark $fixed-left-side-width, $color-white $fixed-left-side-width, $color-white 100%);
-  }
+
 }
 
 
@@ -22,7 +20,14 @@
  */
 
 .c-site-header__logo {
-  padding-left: to-rem($spacing-base);
+  background-color: $color-shark;
+  padding-left: to-rem($gutter);
+  padding-right: to-rem($gutter);
+
+  @include respond-to($palm-small) {
+    padding-left: to-rem($gutter-large);
+    padding-right: to-rem($gutter-large);
+  }
 }
 
 
@@ -43,9 +48,13 @@
  */
 
 .c-site-header__nav {
-  background-color: $color-white;
-  padding-left: to-rem($spacing-base);
-  padding-right: to-rem($spacing-base);
+  padding-left: to-rem($gutter);
+  padding-right: to-rem($gutter);
+
+  @include respond-to($palm-small) {
+    padding-left: to-rem($gutter-large);
+    padding-right: to-rem($gutter-large);
+  }
 }
 
 
@@ -57,4 +66,25 @@
   display: inline-block;
   padding-top: to-rem($spacing-half);
   padding-bottom: to-rem($spacing-half);
+  font-weight: 400;
+  text-transform: uppercase;
+
+  &,
+  &:hover,
+  &:focus {
+    color: $color-bermuda-grey;
+  }
+}
+
+
+/**
+ * Used for hiding text within the palm viewport range.
+ */
+
+.c-site-header__nav__links__hide-at-palm {
+  display: none;
+
+  @include respond-to(palm) {
+    display: inline;
+  }
 }

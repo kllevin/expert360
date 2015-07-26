@@ -13,7 +13,6 @@
  */
 
 .l-grid-master-fixed-width {
-
   @include respond-to(lap-large) {
     float: left;
     width: $fixed-left-side-width;
@@ -26,6 +25,7 @@
  */
 
 .l-grid-master-fluid {
+  @extend %u-clear-fix;
 
   @include respond-to(lap-large) {
     margin-left: $fixed-left-side-width;

@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         files: '**/*.scss',
         tasks: [
           'sass:dev',
-          'autoprefixer']
+          'autoprefixer:dev']
       }
 
     },
@@ -21,12 +21,12 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          'style/style.css': 'style/style.scss'
+          'src/style/style.css': 'src/style/style.scss'
         }
       },
       dist: {
         files: {
-          'dist/style/style.css': 'style/style.scss'
+          'dist/style/style.css': 'src/style/style.scss'
         }
       }
     },
@@ -34,9 +34,14 @@ module.exports = function(grunt) {
     // AUTOPREFIXER
     autoprefixer: {
       options: ['last 2 versions', 'ie 9'],
+      dev: {
+        files: {
+          'src/style/style.css': 'src/style/style.css'
+        }
+      },
       dist: {
         files: {
-          'style/style.css': 'style/style.css'
+          'dist/style/style.css': 'dist/style/style.css'
         }
       }
     },
@@ -61,16 +66,18 @@ module.exports = function(grunt) {
     svgmin: {
       options: {
         plugins: [
-          { cleanupIDs: false },
-          { removeUselessStrokeAndFill: false }
+          { cleanupIDs: true },
+          { removeUselessStrokeAndFill: true },
+          { removeTitle: true },
+          { removeAttrs: true }
         ]
       },
       dist: {
         files: [{
           expand: true,
-          cwd: 'images/svgs/',
+          cwd: 'src/images/svgs/',
           src: ['*.svg'],
-          dest: 'images/svgs/'
+          dest: 'src/images/svgs/'
         }]
       }
     },
@@ -82,7 +89,7 @@ module.exports = function(grunt) {
       },
       dist : {
         files: {
-          'dist/svg-defs.svg': ['images/svgs/*.svg'],
+          'dist/svg-defs.svg': ['src/images/svgs/*.svg'],
         }
       }
     },
@@ -129,6 +136,7 @@ module.exports = function(grunt) {
     'sass:dist',
     'autoprefixer',
     'cssmin',
+    'svg',
     'htmlmin'
   ]);
 

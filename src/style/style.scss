@@ -22,6 +22,13 @@ $color-navy-blue-dark:    #1b2127;
 
 $color-navy-blue-light:   #21282e;
 
+$color-bermuda-grey:      #72899e;
+
+$color-limed-spruce:      #3e4a56;
+
+$color-oxford-blue:       #2c3944;
+
+
 // Fixed left side width
 $fixed-left-side-width:   260px;
 
@@ -55,90 +62,90 @@ $font-family-base:      "Open Sans", sans-serif;
 $font-size-heading-1:   64;
 $font-size-heading-2:   24;
 $font-size-heading-5:   15;
-@import "../node_modules/scally/core/settings/typography";
+@import "../../node_modules/scally/core/settings/typography";
 
-@import "../node_modules/scally/core/settings/spacing";
+@import "../../node_modules/scally/core/settings/spacing";
 
-@import "../node_modules/scally/core/settings/retina-resolution";
+@import "../../node_modules/scally/core/settings/retina-resolution";
 
-@import "../node_modules/scally/core/settings/breakpoints";
+@import "../../node_modules/scally/core/settings/breakpoints";
 
-@import "../node_modules/scally/core/settings/widths";
+@import "../../node_modules/scally/core/settings/widths";
 
 $color-brand:  #f16439;
 $color-text-base: #21282e;
-@import "../node_modules/scally/core/settings/colours";
+@import "../../node_modules/scally/core/settings/colours";
 
-@import "../node_modules/scally/core/settings/positioning";
+@import "../../node_modules/scally/core/settings/positioning";
 
-@import "../node_modules/scally/core/settings/cosmetics";
+@import "../../node_modules/scally/core/settings/cosmetics";
 
 // Functions
-@import "../node_modules/scally/core/functions/convert-px-to-em-rem";
+@import "../../node_modules/scally/core/functions/convert-px-to-em-rem";
 
-@import "../node_modules/scally/core/functions/math-helpers";
+@import "../../node_modules/scally/core/functions/math-helpers";
 
-@import "../node_modules/scally/core/functions/string-replace";
+@import "../../node_modules/scally/core/functions/string-replace";
 
-@import "../node_modules/scally/core/functions/strip-unit";
+@import "../../node_modules/scally/core/functions/strip-unit";
 
-@import "../node_modules/scally/core/functions/tint-shade";
+@import "../../node_modules/scally/core/functions/tint-shade";
 
 // Mixins
-@import "../node_modules/scally/core/mixins/convert-px-to-em-rem";
+@import "../../node_modules/scally/core/mixins/convert-px-to-em-rem";
 
-@import "../node_modules/scally/core/mixins/font-size";
+@import "../../node_modules/scally/core/mixins/font-size";
 
-@import "../node_modules/scally/core/mixins/gradients";
+@import "../../node_modules/scally/core/mixins/gradients";
 
-@import "../node_modules/scally/core/mixins/media-queries";
+@import "../../node_modules/scally/core/mixins/media-queries";
 
-@import "../node_modules/scally/core/mixins/generate-at-breakpoints";
+@import "../../node_modules/scally/core/mixins/generate-at-breakpoints";
 
-@import "../node_modules/scally/core/mixins/generate-percentage-classes-at-breakpoints";
+@import "../../node_modules/scally/core/mixins/generate-percentage-classes-at-breakpoints";
 
-@import "../node_modules/scally/core/mixins/retina-bg-image";
+@import "../../node_modules/scally/core/mixins/retina-bg-image";
 
-@import "../node_modules/scally/core/mixins/target-browsers";
+@import "../../node_modules/scally/core/mixins/target-browsers";
 
-@import "../node_modules/scally/core/mixins/target-headings";
+@import "../../node_modules/scally/core/mixins/target-headings";
 
-@import "../node_modules/scally/core/mixins/text-input-placeholder-colour.scss";
+@import "../../node_modules/scally/core/mixins/text-input-placeholder-colour.scss";
 
 // Normalize
-@import "../node_modules/scally/core/normalize";
+@import "../../node_modules/scally/core/normalize";
 
 // Reset
-@import "../node_modules/scally/core/reset";
+@import "../../node_modules/scally/core/reset";
 
 // Base
 
 $html-element-background-color:  $color-off-white;
-@import "../node_modules/scally/core/base/root";
+@import "../../node_modules/scally/core/base/root";
 
-@import "../node_modules/scally/core/base/abbreviation";
+@import "../../node_modules/scally/core/base/abbreviation";
 
-@import "../node_modules/scally/core/base/forms";
+@import "../../node_modules/scally/core/base/forms";
 
 $apply-details-marker: true;
-@import "../node_modules/scally/core/base/details";
+@import "../../node_modules/scally/core/base/details";
 
-@import "../node_modules/scally/core/base/headings";
+@import "../../node_modules/scally/core/base/headings";
 
-@import "../node_modules/scally/core/base/horizontal-rule";
+@import "../../node_modules/scally/core/base/horizontal-rule";
 
-@import "../node_modules/scally/core/base/links";
+@import "../../node_modules/scally/core/base/links";
 
-@import "../node_modules/scally/core/base/media";
+@import "../../node_modules/scally/core/base/media";
 
-@import "../node_modules/scally/core/base/paragraphs";
+@import "../../node_modules/scally/core/base/paragraphs";
 
-@import "../node_modules/scally/core/base/print";
+@import "../../node_modules/scally/core/base/print";
 
-@import "../node_modules/scally/core/base/viewport";
+@import "../../node_modules/scally/core/base/viewport";
 
 // Placeholders
-@import "../node_modules/scally/core/placeholders/bottom-spacing";
+@import "../../node_modules/scally/core/placeholders/bottom-spacing";
 
 
 /**
@@ -149,15 +156,15 @@ $apply-details-marker: true;
 $l-container-width: 100%;
 $l-container-minimum-width: 220;
 $l-container-maximum-width: 1200;
-@import "../node_modules/scally/layout/l-container";
+@import "../../node_modules/scally/layout/l-container";
 
 // Grid
-@import "../node_modules/scally/layout/l-grid";
+@import "../../node_modules/scally/layout/l-grid";
 
 // Side by side
-@import "../node_modules/scally/layout/l-side-by-side";
+@import "../../node_modules/scally/layout/l-side-by-side";
 
-@import "../node_modules/scally/layout/l-side-by-side-alt";
+@import "../../node_modules/scally/layout/l-side-by-side-alt";
 
 
 /**
@@ -174,15 +181,15 @@ $l-container-maximum-width: 1200;
  * UTILITIES.
  */
 
-@import "../node_modules/scally/utilities/u-clear-fix";
+@import "../../node_modules/scally/utilities/u-clear-fix";
 
-@import "../node_modules/scally/utilities/u-hide";
+@import "../../node_modules/scally/utilities/u-hide";
 
-@import "../node_modules/scally/utilities/u-spacing";
+@import "../../node_modules/scally/utilities/u-spacing";
 
-@import "../node_modules/scally/utilities/u-text";
+@import "../../node_modules/scally/utilities/u-text";
 
-@import "../node_modules/scally/utilities/u-widths";
+@import "../../node_modules/scally/utilities/u-widths";
 
 
 
@@ -222,6 +229,8 @@ $l-container-maximum-width: 1200;
 @import "components/c-main-content";
 
 @import "components/c-banner";
+
+@import "components/c-icon";
 
 @import "components/c-navigation";
 

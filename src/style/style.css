@@ -4621,6 +4621,17 @@ a {
   min-height: 17.33333rem; }
 
 /* ============================================================================
+   @COMPONENTS -> ICON
+   ========================================================================= */
+/**
+ * The icon component.
+ */
+.c-icon {
+  display: inline-block;
+  height: 1.06667rem;
+  width: 1.06667rem; }
+
+/* ============================================================================
    @COMPONENTS -> NAVIGATION
    ========================================================================= */
 /**
@@ -4636,18 +4647,59 @@ a {
 .c-nav__primary-item {
   border-bottom: 1px solid #2c3944; }
 
+/**
+ * Links.
+ */
 .c-nav__primary-item__link {
   display: block;
   color: #72899e;
   padding: 0.8rem 0;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  /**
+   * Extend `.c-icon` in Components -> `.c-nav`.
+   */ }
   .c-nav__primary-item__link:hover, .c-nav__primary-item__link:active, .c-nav__primary-item__link.is-active {
     color: #fff;
     text-decoration: none; }
+  .c-nav__primary-item__link .c-icon {
+    fill: currentColor; }
 
+/**
+ * Control the open and close state of primary nav items.
+ *
+ * This is specifically needed for `details` element.
+ *
+ * N.B. a polyfill is needed for cross browser compatibility with the `open`
+ * attribute.
+ */
+.c-nav__primary-item-with-children {
+  /**
+   * Extend `.c-icon` in Components -> `.c-nav`.
+   */ }
+  .c-nav__primary-item-with-children .c-icon--minus {
+    display: none; }
+  .c-nav__primary-item-with-children[open] .c-icon--minus {
+    display: inline-block; }
+  .c-nav__primary-item-with-children[open] .c-icon--plus {
+    display: none; }
+
+/**
+ * Second Level.
+ */
 .c-nav__secondary-item {
   margin-bottom: 0.8rem; }
 
+/**
+ * Modifier: disabled
+ */
+.c-nav__secondary-item--disabled {
+  color: #3e4a56;
+  font-style: italic;
+  text-transform: capitalize; }
+
+/**
+ * Links.
+ */
 .c-nav__secondary-item__link {
   display: block;
   text-transform: capitalize;
@@ -4655,11 +4707,6 @@ a {
   .c-nav__secondary-item__link:hover, .c-nav__secondary-item__link:active, .c-nav__secondary-item__link.is-active {
     color: #fff;
     text-decoration: none; }
-
-.c-nav__secondary-item--disabled {
-  color: #3e4a56;
-  font-style: italic;
-  text-transform: capitalize; }
 
 /* ============================================================================
    @COMPONENTS -> AVATAR

@@ -24,4 +24,3 @@ To run this project you will need:
 - Make sure the logo isn't using the current `src`, ideally it'll be an SVG but probably can't as you don't have a vector version.
 - Reduce the width class output by reducing these settings: <https://github.com/chris-pearce/scally/blob/master/core/mixins/_generate-percentage-classes-at-breakpoints.scss#L58-L66>.
 - Make sure the Banner component isn't using <https://expert360.com/images/companyProducts/home/hero_home.jpg?34ae2a2e> for it's background image.
-- Change the `style` directories to `css`.

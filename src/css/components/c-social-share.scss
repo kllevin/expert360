@@ -1,0 +1,48 @@
+/* ============================================================================
+   @COMPONENTS -> SOCIAL SHARE
+   ========================================================================= */
+
+
+/**
+ * Social share component.
+ */
+
+
+/**
+ * Settings
+ */
+
+$c-social-share-icon-twitter:   #55acee;
+
+$c-social-share-icon-facebook:  #3b5999;
+
+$c-social-share-icon-linkedin:  #1a85bc;
+
+/**
+ * Social Share.
+ */
+
+.c-social-share {
+
+
+   /**
+   * Extend `.c-icon` in Components -> `.c-social-share`.
+   */
+
+  .c-icon {
+    height: 24px;
+  width: 24px;
+  }
+
+  .c-icon--facebook {
+    fill: $c-social-share-icon-facebook;
+  }
+
+  .c-icon--twitter {
+    fill: $c-social-share-icon-twitter;
+  }
+
+  .c-icon--linkedin {
+    fill: $c-social-share-icon-linkedin;
+  }
+}

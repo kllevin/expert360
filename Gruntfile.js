@@ -115,6 +115,22 @@ module.exports = function(grunt) {
           dest: 'dist/'
         }]
       }
+    },
+
+    // OPTIMISE IMAGES
+    imagemin: {
+      options: {
+        progressive: true,
+        optimizationLevel: 4
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'src/images',
+          src: '**/*.{png,jpg,jpeg,gif}',
+          dest: 'dist/images'
+        }]
+      }
     }
 
   });
@@ -128,6 +144,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   // REGISTER TASKS
   grunt.registerTask('svg', ['svgmin', 'svgstore']);

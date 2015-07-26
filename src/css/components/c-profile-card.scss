@@ -4,19 +4,57 @@
 
 
 /**
- * Round Avatar.
+ * .
  */
 
+
+/**
+ * Settings
+ */
+
+$c-profile-card-title-font-size: 50;
+
+
+/**
+ * Profile Card.
+ */
 .c-profile-card {
-  background: pink;
+  position: relative;
+  display: inline-block;
+  color: $color-white;
 }
 
 .c-profile-card__title {
   text-shadow: 2px 2px 0 rgba($color-black, 0.3);
-  font-size: to-rem(50);
+  font-size: to-rem($c-profile-card-title-font-size);
   font-weight: $font-weight-extra-light;
   line-height: 1.2;
   color: $color-white;
 
   margin-bottom: 0;
+}
+
+.c-profile-card__sub-title {
+  color: $color-white;
+  margin-bottom: 0;
+}
+
+.c-profile-card__description__location {
+  display: block;
+  font-style: italic;
+}
+
+.c-profile-card__social-share {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+
+  /**
+   * Extend `.c-social-share` in Components -> `.c-profile-card`.
+   */
+
+  .c-social-share {
+    display: inline-block;
+  }
 }

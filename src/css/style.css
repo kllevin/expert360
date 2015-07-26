@@ -2506,6 +2506,206 @@ h6:last-child,
   .o-button:active {
     text-decoration: none; }
 
+/* ============================================================================
+   @OBJECTS -> LIST INLINE
+   ========================================================================= */
+/**
+ * Make list items for `ul` and `ol` elements render in one line which can be
+ * extended with a number of modifiers.
+ *
+ * N.B. this utility requires that you remove the whitespace between `li`s
+ * especially with the Spacing modifiers. One way to remove whitespace is by
+ * inserting HTML comments between the opening and closing `li`s (see @markup
+ * section below). Or you can omit the closing `li` which isn't recommended :)
+ *
+ * The objects block class, its modifier class(s), and its element class(s)
+ * (available as silent placeholder selectors also):
+ *
+   .o-list-inline
+   .o-list-inline--spacing-base
+   .o-list-inline--spacing-base-both
+   .o-list-inline--spacing-tiny
+   .o-list-inline--spacing-tiny-both
+   .o-list-inline--spacing-small
+   .o-list-inline--spacing-small-both
+   .o-list-inline--spacing-large
+   .o-list-inline--spacing-large-both
+   .o-list-inline--spacing-huge
+   .o-list-inline--spacing-huge-both
+   .o-list-inline--divider
+   .o-list-inline--fit-flexbox
+   .o-list-inline--fit-table
+   .o-list-inline--delimited-slash
+   .o-list-inline--delimited-comma
+ *
+ * @markup
+   <ul class="o-list-inline [modifiers(s)]">
+     <li>Lorem</li><!--
+     --><li>Aliquam</li><!--
+     --><li>Vestibulum</li>
+   </ul>
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+/**
+ * Spacing between list items.
+ */
+/**
+ * Dividers.
+ */
+.o-list-inline > li {
+  display: inline-block; }
+
+/**
+ * Modifier: spacing.
+ *
+ * Add spacing between the list items. The default is to apply spacing to the
+ * outside of the list items via `margin-left` but there's a version where the
+ * spacing can be applied to both sides via `margin-left` and `padding-left`.
+ * And we offset the spacing from the first list item by using a negative
+ * `margin-left` on the `ul`, this is the most optimal way of handling this as
+ * there can be cases where the list items wrap onto multiple lines.
+ */
+/**
+ * Base.
+ */
+.o-list-inline--spacing-base {
+  margin-left: -1.6rem; }
+  .o-list-inline--spacing-base > li {
+    margin-left: 1.6rem; }
+
+.o-list-inline--spacing-base-both {
+  margin-left: -3.2rem; }
+  .o-list-inline--spacing-base-both > li {
+    margin-left: 1.6rem;
+    padding-left: 1.6rem; }
+
+/**
+ * Tiny.
+ */
+.o-list-inline--spacing-tiny {
+  margin-left: -0.53333rem; }
+  .o-list-inline--spacing-tiny > li {
+    margin-left: 0.53333rem; }
+
+.o-list-inline--spacing-tiny-both {
+  margin-left: -1.06667rem; }
+  .o-list-inline--spacing-tiny-both > li {
+    margin-left: 0.53333rem;
+    padding-left: 0.53333rem; }
+
+/**
+ * Small.
+ */
+.o-list-inline--spacing-small {
+  margin-left: -0.8rem; }
+  .o-list-inline--spacing-small > li {
+    margin-left: 0.8rem; }
+
+.o-list-inline--spacing-small-both {
+  margin-left: -1.6rem; }
+  .o-list-inline--spacing-small-both > li {
+    margin-left: 0.8rem;
+    padding-left: 0.8rem; }
+
+/**
+ * Large.
+ */
+.o-list-inline--spacing-large {
+  margin-left: -2.4rem; }
+  .o-list-inline--spacing-large > li {
+    margin-left: 2.4rem; }
+
+.o-list-inline--spacing-large-both {
+  margin-left: -4.8rem; }
+  .o-list-inline--spacing-large-both > li {
+    margin-left: 2.4rem;
+    padding-left: 2.4rem; }
+
+/**
+ * Huge.
+ */
+.o-list-inline--spacing-huge {
+  margin-left: -3.2rem; }
+  .o-list-inline--spacing-huge > li {
+    margin-left: 3.2rem; }
+
+.o-list-inline--spacing-huge-both {
+  margin-left: -6.4rem; }
+  .o-list-inline--spacing-huge-both > li {
+    margin-left: 3.2rem;
+    padding-left: 3.2rem; }
+
+/**
+ * Modifier: divider.
+ *
+ * Add a key-line separator between the list items.
+ */
+.o-list-inline--divider > li + li {
+  border-left: 1px solid #21282e; }
+
+/**
+ * Modifier: fit.
+ *
+ * Force the list items to occupy 100% of the available width of its parent.
+ */
+.o-list-inline--fit-flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+  .o-list-inline--fit-flexbox > li {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+
+.o-list-inline--fit-table {
+  display: table;
+  width: 100%; }
+  .o-list-inline--fit-table > li {
+    display: table-cell; }
+
+/**
+ * Modifier: delimited.
+ *
+ * List items separated by a few different separators.
+ */
+.o-list-inline--delimited-slash > li + li:before {
+  content: "/"; }
+
+.o-list-inline--delimited-slash[class*="o-list-inline--spacing"] > li +
+li:before {
+  display: inline-block; }
+
+.o-list-inline--spacing-base.o-list-inline--delimited-slash > li + li:before {
+  margin-right: 1.6rem; }
+
+.o-list-inline--spacing-tiny.o-list-inline--delimited-slash > li + li:before {
+  margin-right: 0.53333rem; }
+
+.o-list-inline--spacing-small.o-list-inline--delimited-slash > li + li:before {
+  margin-right: 0.8rem; }
+
+.o-list-inline--spacing-large.o-list-inline--delimited-slash > li + li:before {
+  margin-right: 2.4rem; }
+
+.o-list-inline--spacing-huge.o-list-inline--delimited-slash > li + li:before {
+  margin-right: 3.2rem; }
+
+.o-list-inline--delimited-comma > li + li:before {
+  content: ","; }
+
 /**
  * COMPONENTS.
  */
@@ -5041,7 +5241,8 @@ a {
 .c-banner {
   background: url("https://expert360.com/images/companyProducts/home/hero_home.jpg?34ae2a2e") no-repeat 0 0;
   background-size: cover;
-  min-height: 17.33333rem; }
+  min-height: 17.33333rem;
+  padding: 1.6rem; }
 
 /* ============================================================================
    @COMPONENTS -> ICON
@@ -5160,10 +5361,18 @@ a {
    @COMPONENTS -> PROFILE CARD
    ========================================================================= */
 /**
- * Round Avatar.
+ * .
+ */
+/**
+ * Settings
+ */
+/**
+ * Profile Card.
  */
 .c-profile-card {
-  background: pink; }
+  position: relative;
+  display: inline-block;
+  color: #fff; }
 
 .c-profile-card__title {
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
@@ -5172,6 +5381,50 @@ a {
   line-height: 1.2;
   color: #fff;
   margin-bottom: 0; }
+
+.c-profile-card__sub-title {
+  color: #fff;
+  margin-bottom: 0; }
+
+.c-profile-card__description__location {
+  display: block;
+  font-style: italic; }
+
+.c-profile-card__social-share {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /**
+   * Extend `.c-social-share` in Components -> `.c-profile-card`.
+   */ }
+  .c-profile-card__social-share .c-social-share {
+    display: inline-block; }
+
+/* ============================================================================
+   @COMPONENTS -> SOCIAL SHARE
+   ========================================================================= */
+/**
+ * Social share component.
+ */
+/**
+ * Settings
+ */
+/**
+ * Social Share.
+ */
+.c-social-share {
+  /**
+  * Extend `.c-icon` in Components -> `.c-social-share`.
+  */ }
+  .c-social-share .c-icon {
+    height: 24px;
+    width: 24px; }
+  .c-social-share .c-icon--facebook {
+    fill: #3b5999; }
+  .c-social-share .c-icon--twitter {
+    fill: #55acee; }
+  .c-social-share .c-icon--linkedin {
+    fill: #1a85bc; }
 
 /* ============================================================================
    @COMPONENTS -> BOX

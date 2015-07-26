@@ -194,6 +194,8 @@ $l-container-maximum-width: 1200;
 
 @import "../../node_modules/scally/objects/o-button";
 
+@import "../../node_modules/scally/objects/o-list-inline";
+
 
 /**
  * COMPONENTS.
@@ -277,6 +279,8 @@ $border-radius: 4px;
 @import "components/c-avatar";
 
 @import "components/c-profile-card";
+
+@import "components/c-social-share";
 
 @import "components/c-box";
 

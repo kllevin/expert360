@@ -33,7 +33,7 @@
   text-transform: uppercase;
 
   &:hover,
-  &:active,
+  &:focus,
   &.is-active {
     color: $color-white;
     text-decoration: none;

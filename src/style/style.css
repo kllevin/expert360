@@ -1669,16 +1669,16 @@ h2,
  */
 h3,
 .h3 {
-  font-size: 1.6rem ;
-  line-height: 1 ; }
+  font-size: 1.33333rem ;
+  line-height: 1.2 ; }
 
 /**
  * H4.
  */
 h4,
 .h4 {
-  font-size: 1.33333rem ;
-  line-height: 1.2 ; }
+  font-size: 1.13333rem ;
+  line-height: 1.41176 ; }
 
 /**
  * H5.
@@ -2459,12 +2459,139 @@ h6:last-child,
 /**
  * OBJECTS.
  */
+/* ============================================================================
+   @OBJECTS -> BUTTON
+   ========================================================================= */
+/**
+ * Assign sensible defaults to buttons (`input` and `button`) and
+ * reset/normalize styles from the UA stylesheet. This object will be the
+ * starting point for any button components.
+ */
+/**
+ * 1.  Prevent button text from being selectable.
+ * 2.  Make sure `input` will wrap text across multiple lines.
+ * 3.  Allow us to style box model properties.
+ * 4.  Line different sized buttons up a little nicer.
+ * 5.  Correct font family not being inherited in all browsers.
+ * 6.  Correct font size not being inherited in all browsers.
+ * 7.  Address Firefox 4+ setting `line-height` on `input` using `!important`
+ *     in the UA stylesheet.
+ * 8.  Improve usability and consistency of cursor style between image-type
+ *     `input` and others.
+ * 9.  Reset/normalize styles from the UA stylesheet.
+ * 10. Because this object can be applied to links we want to remove any
+ *     `text-decoration: underline` styling.
+ */
+.c-button-add,
+.o-button {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: normal;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: normal;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent; }
+  .c-button-add, .c-button-add:hover, .c-button-add:focus, .c-button-add:active,
+  .o-button,
+  .o-button:hover,
+  .o-button:focus,
+  .o-button:active {
+    text-decoration: none; }
+
 /**
  * COMPONENTS.
  */
 /**
  * UTILITIES.
  */
+/* ============================================================================
+   @UTILITIES -> ALIGNMENTS
+   ========================================================================= */
+/**
+ * Apply different alignments to elements.
+ *
+ * N.B. text alignments can be found in the Text -> Alignment utility.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-align-v-inline-top
+   .u-align-v-inline-middle
+   .u-align-v-inline-baseline
+   .u-align-v-inline-bottom
+   .u-align-v-inline-inherit
+   .u-align-v-block-middle-flexbox
+   .u-align-v-block-middle-position
+   .u-align-center-block
+ *
+ * @demo
+ * http://codepen.io/chris-pearce/full/YPejod/
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+/**
+ * Inline vertical alignments.
+ */
+.u-align-v-inline-top {
+  vertical-align: top !important; }
+
+.u-align-v-inline-middle {
+  vertical-align: middle !important; }
+
+.u-align-v-inline-baseline {
+  vertical-align: baseline !important; }
+
+.u-align-v-inline-bottom {
+  vertical-align: bottom !important; }
+
+.u-align-v-inline-inherit {
+  vertical-align: inherit !important; }
+
+/**
+ * Block level vertical alignments.
+ */
+.u-align-v-block-middle-flexbox {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-pack: center !important;
+  -webkit-justify-content: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important; }
+
+.u-align-v-block-middle-position {
+  position: relative !important;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%) !important;
+      -ms-transform: translateY(-50%) !important;
+          transform: translateY(-50%) !important; }
+
+/**
+ * Center align a block level element.
+ *
+ * 1. Make it work on inline elements e.g. `img`.
+ */
+.u-align-center-block {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
 /* ============================================================================
    @UTILITIES -> CLEAR FIX
    ========================================================================= */
@@ -4469,16 +4596,36 @@ html {
    @CORE -> BASE -> HEADINGS
    ========================================================================= */
 /**
- * Heading styles per brand guidelines.
+ * Extending base headings provided by Scally.
  */
 h1 {
-  text-shadow: 0.13333rem 0.13333rem 0 rgba(0, 0, 0, 0.3);
   font-weight: 200;
   line-height: 1.2;
-  color: #fff; }
+  color: #5c6f7f; }
 
 h2, .h2 {
   font-weight: 300;
+  line-height: 1.4;
+  color: #5c6f7f; }
+
+.h2-alt {
+  color: #f16439; }
+
+h3, .h3 {
+  font-weight: 600;
+  line-height: 1.4;
+  color: #5c6f7f; }
+
+.h3-alt {
+  color: #f16439; }
+
+h4, .h4 {
+  font-weight: 300;
+  line-height: 1.5;
+  color: #5c6f7f; }
+
+h5, .h5 {
+  font-weight: 600;
   line-height: 1.4; }
 
 /* ============================================================================
@@ -4624,12 +4771,18 @@ a {
    @COMPONENTS -> ICON
    ========================================================================= */
 /**
- * The icon component.
+ * Generic icon component.
  */
 .c-icon {
   display: inline-block;
   height: 1.06667rem;
   width: 1.06667rem; }
+
+/**
+ * Icons.
+ */
+.c-icon--pencil {
+  fill: #dbe5e7; }
 
 /* ============================================================================
    @COMPONENTS -> NAVIGATION
@@ -4658,7 +4811,7 @@ a {
   /**
    * Extend `.c-icon` in Components -> `.c-nav`.
    */ }
-  .c-nav__primary-item__link:hover, .c-nav__primary-item__link:active, .c-nav__primary-item__link.is-active {
+  .c-nav__primary-item__link:hover, .c-nav__primary-item__link:focus, .c-nav__primary-item__link.is-active {
     color: #fff;
     text-decoration: none; }
   .c-nav__primary-item__link .c-icon {
@@ -4712,7 +4865,7 @@ a {
    @COMPONENTS -> AVATAR
    ========================================================================= */
 /**
- * Round Avatar.
+ * Avatar component.
  */
 .c-avatar {
   background: #fff;
@@ -4739,22 +4892,77 @@ a {
   margin-bottom: 0; }
 
 /* ============================================================================
-   @COMPONENTS -> NAVIGATION
+   @COMPONENTS -> BOX
    ========================================================================= */
 /**
- * Basic boxes used to separate sections.
+ * Box component typically used to section content.
  */
-.c-box {
+.c-box,
+.c-button-add {
   padding: 1.6rem;
   border-radius: 0.26667rem;
   border: 1px solid #dbe5e7;
-  background-color: #e8edef;
-  margin-bottom: 0.8rem; }
+  background-color: #e8edef; }
 
-.c-box--basic {
+/**
+ * Modifer: alternate.
+ */
+.c-box--alt {
   box-shadow: 0 0.13333rem 0.13333rem -0.13333rem rgba(0, 0, 0, 0.13);
   background-color: #fff;
-  border-color: #e8eaeb; }
+  border-color: #e8edef; }
+
+/* ============================================================================
+   @COMPONENTS -> BUTTON ADD
+   ========================================================================= */
+/**
+ * Editable button component.
+ */
+.c-button-add {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 1.33333rem;
+  font-weight: 200;
+  color: #5c6f7f;
+  /**
+   * Extend `.c-icon` in Components -> `.c-add-button`.
+   */ }
+  .c-button-add .c-icon {
+    fill: currentColor; }
+
+/* ============================================================================
+   @COMPONENTS -> EMPLOYMENT LIST
+   ========================================================================= */
+/**
+ * Employment List.
+ */
+.c-employment-list > li {
+  border-bottom: 1px solid #dbe5e7;
+  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem; }
+  .c-employment-list > li:last-child {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0; }
+
+/**
+ * Employment title.
+ */
+.c-employment-list__title {
+  margin-bottom: 0.8rem; }
+
+/**
+ * Employer.
+ */
+.c-employment-list__employer {
+  margin-bottom: 0; }
+
+/**
+ * Duration of employment.
+ */
+.c-employment-list__duration {
+  font-style: italic; }
 
 /* ============================================================================
    @COMPONENTS -> STYLEGUIDE
@@ -4771,9 +4979,3 @@ a {
 .sg-section__title {
   color: #000;
   border-bottom: 1px solid #000; }
-
-/**
- * Temporary.
- */
-.c-box__title {
-  color: #f16439; }

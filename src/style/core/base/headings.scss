@@ -3,17 +3,42 @@
    ========================================================================= */
 
 /**
- * Heading styles per brand guidelines.
+ * Extending base headings provided by Scally.
  */
 
 h1 {
-   @include to-rem(text-shadow, 2 2 0 rgba(0, 0, 0, 0.3));
    font-weight: 200;
    line-height: 1.2;
-   color: #fff;
+   color: $color-shuttle-grey;
 }
 
 h2, .h2 {
    font-weight: 300;
    line-height: 1.4;
+   color: $color-shuttle-grey;
+}
+
+.h2-alt {
+  color: $color-brand;
+}
+
+h3, .h3 {
+  font-weight: 600;
+  line-height: 1.4;
+  color: $color-shuttle-grey;
+}
+
+.h3-alt {
+  color: $color-brand;
+}
+
+h4, .h4 {
+  font-weight: 300;
+  line-height: 1.5;
+  color: $color-shuttle-grey;
+}
+
+h5, .h5 {
+  font-weight: 600;
+  line-height: 1.4;
 }

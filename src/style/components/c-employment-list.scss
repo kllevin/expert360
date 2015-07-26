@@ -1,0 +1,46 @@
+/* ============================================================================
+   @COMPONENTS -> EMPLOYMENT LIST
+   ========================================================================= */
+
+ /**
+  * Employment List.
+  */
+
+.c-employment-list > li {
+  border-bottom: 1px solid $color-geyser;
+  padding-bottom: to-rem($spacing-base);
+  margin-bottom: to-rem($spacing-base);
+
+  &:last-child {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+}
+
+
+/**
+ * Employment title.
+ */
+
+.c-employment-list__title {
+  margin-bottom: to-rem($spacing-half);
+}
+
+/**
+ * Employer.
+ */
+
+.c-employment-list__employer {
+  margin-bottom: 0;
+}
+
+
+/**
+ * Duration of employment.
+ */
+
+.c-employment-list__duration {
+  font-style: italic;
+}

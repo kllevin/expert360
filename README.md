@@ -21,3 +21,4 @@ To run this project you will need:
 - grunt for UNCSS
 - grunt to optimise images
 - linting
+- improve plus and minus icons, should be thinner line icon, current ones are too heavy for the design.

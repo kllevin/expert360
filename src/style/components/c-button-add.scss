@@ -1,0 +1,29 @@
+/* ============================================================================
+   @COMPONENTS -> BUTTON ADD
+   ========================================================================= */
+
+ /**
+  * Editable button component.
+  */
+
+
+.c-button-add {
+  @extend %o-button;
+  @extend %c-box;
+
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: to-rem(20);
+  font-weight: 200;
+  color: $color-shuttle-grey;
+
+
+  /**
+   * Extend `.c-icon` in Components -> `.c-add-button`.
+   */
+
+  .c-icon {
+    fill: currentColor;
+  }
+}

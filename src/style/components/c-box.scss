@@ -1,22 +1,28 @@
 /* ============================================================================
-   @COMPONENTS -> NAVIGATION
+   @COMPONENTS -> BOX
    ========================================================================= */
 
 
 /**
- * Basic boxes used to separate sections.
+ * Box component typically used to section content.
  */
 
-.c-box {
-   @include to-rem(padding, $spacing-base);
-   @include to-rem(border-radius, $border-radius);
-   border: 1px solid #dbe5e7;
-   background-color: #e8edef;
-   margin-bottom: to-rem($spacing-half);
+.c-box,
+%c-box {
+   padding: to-rem($spacing-base);
+   border-radius: to-rem($border-radius);
+   border: 1px solid $color-geyser;
+   background-color: $color-porcelain;
 }
 
-.c-box--basic {
+
+/**
+ * Modifer: alternate.
+ */
+
+.c-box--alt,
+%c-box--alt {
    @include to-rem(box-shadow, (0 2 2 -2 rgba(0, 0, 0, 0.13)));
-   background-color: #fff;
-   border-color: #e8eaeb;
+   background-color: $color-white;
+   border-color: $color-porcelain;
 }

@@ -28,6 +28,14 @@ $color-limed-spruce:      #3e4a56;
 
 $color-oxford-blue:       #2c3944;
 
+$color-geyser:            #dbe5e7;
+
+$color-porcelain:         #e8edef;
+
+$color-shuttle-grey:      #5c6f7f;
+
+
+
 
 // Fixed left side width
 $fixed-left-side-width:   260px;
@@ -61,6 +69,8 @@ $font-size:             15;
 $font-family-base:      "Open Sans", sans-serif;
 $font-size-heading-1:   64;
 $font-size-heading-2:   24;
+$font-size-heading-3:   20;
+$font-size-heading-4:   17;
 $font-size-heading-5:   15;
 @import "../../node_modules/scally/core/settings/typography";
 
@@ -171,6 +181,8 @@ $l-container-maximum-width: 1200;
  * OBJECTS.
  */
 
+@import "../../node_modules/scally/objects/o-button";
+
 
 /**
  * COMPONENTS.
@@ -180,6 +192,8 @@ $l-container-maximum-width: 1200;
 /**
  * UTILITIES.
  */
+
+@import "../../node_modules/scally/utilities/u-alignments";
 
 @import "../../node_modules/scally/utilities/u-clear-fix";
 
@@ -240,13 +254,8 @@ $l-container-maximum-width: 1200;
 
 @import "components/c-box";
 
+@import "components/c-button-add";
+
+@import "components/c-employment-list";
+
 @import "components/c-styleguide";
-
-
-/**
- * Temporary.
- */
-
-.c-box__title {
-   color: $color-brand;
-}

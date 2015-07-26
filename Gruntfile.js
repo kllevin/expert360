@@ -21,12 +21,12 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          'src/style/style.css': 'src/style/style.scss'
+          'src/css/style.css': 'src/css/style.scss'
         }
       },
       dist: {
         files: {
-          'dist/style/style.css': 'src/style/style.scss'
+          'dist/css/style.css': 'src/css/style.scss'
         }
       }
     },
@@ -36,12 +36,12 @@ module.exports = function(grunt) {
       options: ['last 2 versions', 'ie 9'],
       dev: {
         files: {
-          'src/style/style.css': 'src/style/style.css'
+          'src/css/style.css': 'src/css/style.css'
         }
       },
       dist: {
         files: {
-          'dist/style/style.css': 'dist/style/style.css'
+          'dist/css/style.css': 'dist/css/style.css'
         }
       }
     },
@@ -55,9 +55,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: 'dist/style/',
+          cwd: 'dist/css/',
           src: ['**/*.css'],
-          dest: 'dist/style/'
+          dest: 'dist/css/'
         }]
       }
     },
